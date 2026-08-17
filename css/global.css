@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+:root {
+    --corFundo0: rgb(26, 32, 88);
+    --cor1: #006eff;
+    --cor2: #1b8cff;
+    --cor3: rgba(0,140,255,0.4);
+
+    --font-padrao: Arial, Helvetica,  Sans-serif;
+    --font-destaque: ;
+}
+
+/* Remove espaços padrões do navegador */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+main {
+    margin: auto;
+    
+    padding: 40px;
+}
+
+body {
+    font-family: var(--font-padrao);
+    color: white;
+
+    background-color: var(--corFundo0); /* Se caso o sevidor demorar carregar a imagem*/
+    background-image: linear-gradient(rgba(5,12,24,.78)), url(../imagens/fundo-index02.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    
+}
+
+
+.logo {
+    display: flex;
+   
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+   
+}
+
+.logo i {
+    
+    font-size: 34px;
+    color: var(--cor2);
+}
+
+.logo span {
+    color: var(--cor2);
+
+}
+
+.texto-logo h2 {
+    color: white;
+    font-size: 20px;
+}
+
+.texto-logo span {
+    color: var(--cor2);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*Configuração da SIDEBAR*/
+
+.menu-inferior {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+}
+
+
+
+.menu-inferior {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgba(7, 17, 31, .75);
+
+    backdrop-filter: blur(0px);
+
+    border-top: 1px solid rgba(0, 110, 255, .25);
+
+    box-shadow: 0 0 12px rgba(0,110,255,.4);
+
+    border-radius: 20px 20px 0 0 ;
+
+    z-index: 1000;
+
+    
+}
+
+.menu-inferior a {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    text-decoration: none;
+    color: #b8c0cc;
+
+    transition: .3s;
+
+    position: relative;
+}
+
+.menu-inferior a i {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.menu-inferior a span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.menu-inferior a.ativo {
+    color: var(--cor2);
+}
+
+.menu-inferior a.ativo i {
+    transform: translateY(-3px);
+}
+
+.menu-inferior a.ativo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    top: -13px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: var(--cor2);
+
+    box-shadow: 0 0 10px var(--cor2);
+}
+
+
+
+
+
+

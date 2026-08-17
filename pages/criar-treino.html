@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Guiftness</title>
+
+    
+</head>
+<body>
+   <main class="conteudo">
+    <header class="cabecalho-pagina">
+        <div class="cabecalho-esquerdo">
+
+            <div class="cabecalho-icone">
+                
+            </div>
+
+            <div class="cabecalho-titulo">
+                <h1>Criar Novo Treino</h1>
+                <p>
+                    Monte seu treino de forma rápida e organizada.
+                </p>
+            </div>
+
+        </div>
+        <div class="cabecalho-direito">
+
+            <div class="cabecalho-link">
+                <a href="treinos.html"> 
+                    <i class="fa-regular fa-folder-open"></i>
+                    <span>Ver meus Treinos </span>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="area-principal">
+       
+        <section class="card-treino">
+
+            <header class="titulo-card">
+                <h2>Dados do treino</h2>
+                <p>
+                    Configure as informações básicas do treino.
+                </p>
+
+            </header>
+            <form class="form-treino">
+                <div class="campo-formulario">
+                    
+                    <label for="nomeTreino">
+                        Nome do treino
+                    </label>
+                    <div class="campo-icone">
+                        <i class="fa-solid fa-dumbbell"></i>
+                        <input
+                        type="text"
+                        id="nomeTreino"
+                        placeholder="Ex.: Push A">
+                    </div>
+
+                </div>
+                <div class="campos-grid">
+                    <div class="campo-formulario">
+                        <label for="objetivoTreino"> Objetivo</label>
+
+                        <div class="campo-icone">
+                            <i class="fa-solid fa-bullseye"></i>
+
+                            <select name="objetivoTreino"
+                            class="objetivo-treino" >
+                    
+                        
+                                <option value="hipertrofia">
+                                    Hipertrofia
+                                </option>
+                                <option value="forca">
+                                    Força
+                                </option>
+                                <option value="resistencia">
+                                    Resistência
+                                </option>
+                                <option value="emagrecimento">
+                                    Emagrecimento
+                                </option>
+                    
+                            </select>
+                        </div>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="dia">Dia da semana</label>
+
+                        <div class="campo-icone">
+                            <i class="fa-solid fa-calendar"></i>
+
+
+                            <select name="dia" id="dia">
+                            
+                                <option value="segunda">
+                                    Segunda-Feira
+                                </option>
+                                <option value="terca">
+                                    Terça-Feira
+                                </option>
+                                <option value="quarta">
+                                    Quarta-Feira
+                                </option>
+                                <option value="quinta">
+                                    Quinta-Feira
+                                </option>
+                                <option value="sexta">
+                                    Sexta-Feira
+                                </option>
+                                <option value="sabado">
+                                    Sabádo
+                                </option>
+                                <option value="domingo">
+                                    Domingo
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="campo-formulario">
+
+                       <label for="nivel">Nível do Treino</label>
+
+                       <div class="campo-icone">
+                        <i class="fa-solid fa-chart-bar"></i>
+
+
+                           <select name="nivel" id="nivel">
+                           
+                                <option value="iniciante">
+                                    Iniciante
+                                </option>
+                                <option value="intermediario">
+                                    Intermediário
+                                </option>
+                                <option value="avancado">
+                                    Avançado
+                                </option>
+                           </select>
+                       </div>
+                        
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="tempo">
+                            Tempo Estimado
+                        </label>
+                        <div class="campo-icone">
+
+                            <i class="fa-solid fa-clock"></i>
+                            
+                            <select name="tempo" id="tempo" >
+                            
+                                <option value="15">
+                                    15 minutos
+                                </option>
+                                <option value="30">
+                                    30 minutos
+                                </option>
+                                <option value="45">
+                                    45 minutos
+                                </option>
+                                <option value="60">
+                                    60 minutos
+                                </option>
+                                <option value="75">
+                                    75 minutos
+                                </option>
+                                <option value="90">
+                                    90 minutos
+                                </option>
+                                <option value="120">
+                                    120 minutos
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="campo-formulario">
+                    <label for="observacoes">
+                        Observações (opcional)
+                    </label>
+                    <textarea 
+                    name="observacoes" 
+                    id="observacoes"
+                    placeholder="Ex.: Descanso de 90 segundos entre as séries"></textarea>
+
+                </div>
+            </form>
+
+        <section class="exercicios-adicionados">
+
+                <header>
+                    <h3>Exercícios adicionados </h3>
+                    <span class="contador">0</span>
+                </header>
+
+                <div class="conteudo-lista">
+                    <i class="fa-solid fa-clipboard-list"></i>
+
+                    <h4>Nenhum exercício adicionado</h4>
+
+                    <p>Adicione exercícios da biblioteca ao lado para montar seu treino</p>
+
+                </div>
+         </section>
+
+         <footer class="acoes-treino">
+
+            <button>
+                <i class="fa-regular fa-floppy-disk"></i>
+                Salvar treino
+            </button>
+
+         </footer>
+           
+
+        </section>
+        
+        <section class="biblioteca">
+            <header>
+                <h2>Biblioteca de Exercícios</h2>
+                <p>Busque por exercícios ou filtre por grupo muscular</p>
+            </header>
+            <div class="campo-busca">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+               <input 
+               type="search" 
+               name="busca"
+               id="busca"
+               placeholder="Buscar execícios ou aparelho...">
+            </div>
+            <div class="filtros">
+                <button class="ativo" data-filtro="todos">Todos</button>
+                <button data-filtro="peito">Peito</button>
+                <button data-filtro="costas">Costas</button>
+                <button data-filtro="pernas">Pernas</button>
+                <button data-filtro="ombros">Ombros</button>
+                <button data-filtro="braco">Braços</button>
+                <button data-filtro="abdomen">Abdômen</button>
+            </div>
+            <div class="lista-exercicio">
+            <!--     <article class="card-exercicio" data-grupo="peito">
+
+                    <img src="#" alt="Pessoa executando o exercício Supino Reto.">
+
+                    <div class="conteudo-exercicio">
+
+                        <h3>Supino Reto</h3>
+  
+                        <p class="descricao">
+                            Trabalha os músculos do peito,  <br>ombros e tríceps.
+                        </p>
+                    </div>
+                     <div class="acoes-exercicio">
+
+                        <div class="tags">
+                            <span class="tag-musculo-peito">Peito</span>
+
+                           
+                           
+                        </div>
+                        
+                        <button class="btn-adicionar">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div> -->
+                </article>
+            </div>      
+        </section>
+      
+     
+    </section>
+    
+    <section class="informacoes">
+        <article>
+
+        </article>
+        <article>
+
+        </article>
+        <article>
+
+        </article>
+
+    </section>
+    
+    
+
+   </main>
+       <nav class="menu-inferior">
+
+            <a  href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a class="ativo"  href="pages/criar-treino.html">
+               <i class="fa-solid fa-dumbbell"></i>
+                <span>Criar</span>
+            </a>
+
+            <a href="pages/treinos.html" class="btn">
+                <i class="fa-solid fa-list"></i>
+                <span>Treinos</span>
+            </a>
+
+            <a href="pages/historico-treino.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="pages/exercicios-favoritos.html">
+                <i class="fa-solid fa-heart"></i>
+                <span>Favoritos</span>
+            </a>
+
+            <a href="pages/perfil.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="pages/configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </a>
+
+
+        </nav>
+   
+   <script src="../js/criar-treino.js"></script>
+</body>
+</html>
