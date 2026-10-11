@@ -1,11 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página Treinos</title>
+    <link rel="stylesheet" href="../css/global.css">  <!-- CSS global -->
+    <link rel="stylesheet" href="../css/treino.css">  <!-- CSS específico desta página -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome iconi -->
 </head>
 <body>
-    <h1>Meu Treinos</h1>
+    <main class="pagina-treinos">
+
+        <header class="cabecalho-treinos">
+
+            <div class="titulo-pagina">
+                <h1>Minhas fichas</h1>
+                <p>Todas as fichas que você  criou.</p>
+
+            </div>
+
+            <a href="criar-treino.html" class="btn-novo-treino" id="btn-novo-treino">
+                
+                <i class="fa-solid fa-plus"></i>
+
+                <span>Nova ficha</span>
+            </a>
+
+        </header>
+        <!-- ====================
+         CARDS DE RESUMO
+         ========================= -->
+         <section class="resumo-treinos">
+
+            <!-- Total de fichas -->
+             <article class="card-resumo card-total">
+
+                
+
+                <div class="card-resumo-conteudo">
+
+                    <span>Total de fichas</span>
+                    <strong id="total-treinos">12</strong>
+
+                </div>
+
+                
+                    <i class="fa-solid fa-clipboard-list"></i>
+                
+
+             </article>
+
+             <article class="card-resumo card-semana">
+
+              
+
+                <div class="card-resumo-conteudo">
+
+                    <span>Criadas esta semana</span>
+                    <strong id="treinos-semana">5</strong>
+
+                </div>
+
+               
+                    <i class="fa-solid fa-chart-line"></i>
+                
+
+             </article>
+
+             <!-- Total de exercícios -->
+              <article class="card-resumo card-exercicios">
+
+                
+
+                <div class="card-resumo-conteudo">
+
+                    <span>Total de Exercícios</span>
+                    <strong id="total-exercicios">48</strong>
+
+                </div>
+
+               
+                    <i class="fa-solid fa-dumbbell"></i>
+                
+
+              </article>
+
+              <!-- Duração média -->
+               <article class="card-resumo card-duracao"> 
+
+
+
+                 <div class="card-resumo-conteudo">
+
+                    <span>Duração Média</span>
+                    
+
+                    <strong id="duracao-media"> 60 <small>min</small> </strong>
+
+                </div>
+
+                     <i class="fa-solid fa-clock"></i>
+
+               </article>
+         </section>
+
+          <!-- =========================
+             BUSCA E FILTROS
+        ========================== -->
+        <section class="filtros-treinos">
+
+            <!-- Campo de busca -->
+             <div class="campo-busca-treinos">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input 
+                type="search"
+                id="busca-treinos"
+                placeholder="Buscar fichas..."
+                autocomplete="off">
+             </div>
+
+             <!-- Filtros por objetivo -->
+
+             <div class="filtro-objetivo">
+
+                <select id="filtro-objetivo">
+
+                    <option value="todos">
+                        Todos os objetivos
+                    </option>
+
+                    <option value="hipertrofia">
+                        Hipertrofia
+                    </option>
+
+                    <option value="forca">  
+                        Força
+                    </option>
+
+                    <option value="resistencia">  
+                        Resistência
+                    </option>
+
+                    <option value="emagrecimento">    
+                        Emagrecimento
+                    </option>
+                </select>
+             </div>
+
+             <!-- Botão de filtros -->
+
+             <button
+              type="button"
+              class="btn-filtros"
+              id="btn-filtros" >
+
+              <i class="fa-solid fa-sliders"></i>
+              
+              </button>
+
+        </section>
+
+        <!--====================
+         LISTA DE FICHAS 
+         =======================-->
+    <section class="lista-treinos"  id="lista-treinos" >
+      
+
+
+    </section>
+       
+    </main>
+
+    <!-- Menu Inferior -->
+   <nav class="menu-inferior"> <!-- Menu de navegação -->
+
+            <a  href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a   href="criar-treino.html">
+               <i class="fa-solid fa-dumbbell"></i>
+                <span>Criar</span>
+            </a>
+
+            <a class="ativo"  href="treinos.html" >
+                <i class="fa-solid fa-list"></i>
+                <span>Fichas</span>
+            </a>
+
+            <a href="historico-treino.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="exercicios-favoritos.html">
+                <i class="fa-solid fa-heart"></i>
+                <span>Favoritos</span>
+            </a>
+
+            <a href="perfil.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </a>
+
+
+        </nav>
+
+    <script src="../js/treinos.js"></script>
 </body>
 </html>

@@ -1,0 +1,654 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cabecalho  */
+.cabecalho-treino {
+    position: relative;
+    min-height: 110px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 20px;
+
+    
+
+    border-bottom: 1px solid var(--cor-destaque);
+}
+
+/* Botão voltar */
+
+.btn-voltar {
+    position: absolute;
+
+    top: 25px;
+    left: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+   
+
+    color: var(--cor-primaria);
+    
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Titulo */
+.titulo-treino {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-left: 0;
+    padding-top: 15px;
+}
+
+/* Ícone */
+.icone-treino {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cor-destaque);
+
+    font-size: 23px;
+}
+
+/* Nome do treino */
+.titulo-treino h1 {
+    margin: 0;
+
+    color: var(--cor-texto);
+
+    font-size: 16px;
+}
+
+/* Status do treino */
+.status-treino {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 5px;
+
+    color: var(--cor-texto);
+
+    font-size: 10px;
+}
+
+/* icone do Status */
+
+.status-treino i {
+    color: #4ade80;
+
+    font-size: 8px;
+}
+/* ======================
+CARD CONTROLE DE CARGA
+======================= */
+
+/* PAINEL SUPERIOR  */
+.painel-superior {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+/* Dando forma ao carde controle de carga */
+.controle-carga {
+    min-height: auto;
+    background: var(--treino-fundo-card);
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 14px;
+
+    padding: 12px;
+
+    
+}
+
+/* Titulo  */
+.controle-carga h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 10px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--cor-destaque);
+
+    font-size: 16px;
+}
+
+/* icone */
+.controle-carga h2 i {
+    
+    color: var(--cor-destaque);
+    font-size: 18px;
+    
+
+}
+
+/* parte que coloca os dois blocos lado a lado  */
+.carga-conteudo {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+   
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* Nome do exercício  */
+.exercicio-carga h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+
+    margin: 0 0 15px;
+}
+
+.exercicio-carga h3 i {
+    color: var(--cor-destaque);
+    font-size: 13px;
+}
+
+/* Comparação de carga */
+.comparacao-carga {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+/* As duas divs, cada lado */
+.comparacao-carga div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 ;
+    min-width: 0;
+}
+
+
+/* Primeiro lado alinhado à esquerda */
+.comparacao-carga div:first-child {
+   
+    padding-left: 0;
+}
+
+
+.comparacao-carga div + div {
+    border-left: 1px solid var(--cor-destaque);
+
+    padding-left: 60px;
+}
+
+
+
+
+
+.comparacao-carga span {
+
+    color: var(--cor-texto);
+
+    font-size: 13px;
+
+}
+
+.comparacao-carga strong {
+
+    font-size: 16px;
+
+}
+
+.comparacao-carga i {
+
+
+    color: var(--cor-destaque);
+
+    font-size: 13px;
+
+}
+
+/* Resultado da carga  em relaçõa ao ultimo treino*/
+
+.resultado-carga {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+    font-size: 13px;
+
+    background: var(--treino-fundo-input);
+
+    border: 1px solid var(--treino-borda-hover);
+
+    border-radius: 10px;
+
+}
+
+.resultado-carga strong {
+    
+
+    color: rgba(7, 252, 7, 0.842);
+
+    font-size: 18px;
+
+}
+
+/* Informação inferior */
+
+.info-carga {
+
+    color: var(--cor-texto-secundario);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+
+}
+
+.info-carga i {
+
+    color: var(--cor-destaque);
+
+}
+
+
+/*==========================
+ CARD DA OBSERVAÇÃO DA FICHA 
+ ============================*/
+
+ /* Dando forma ao carde */
+ .observacao-ficha {
+    min-height: auto;
+    background: var(--treino-fundo-card);
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 14px;
+
+    padding: 12px;
+}
+
+/* Título */
+.observacao-ficha h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 15px;
+
+    padding-bottom: 15px;
+
+    
+
+    font-size: 16px;
+}
+
+.observacao-ficha h2 i {
+    display: flex;
+    text-align: center;
+    color: var(--cor-destaque);
+    font-size: 18px;
+    
+}
+
+
+
+
+/* Texto de observação */
+.observacao-ficha p {
+    background: var(--treino-fundo-input);
+    
+    margin: 0 0 20px;
+
+    padding: 13px;
+
+    border: 1px solid var(--treino-borda-hover);
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* Botão */
+
+.btn-editar-observacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    background: transparent;
+    color: var(--cor-destaque);
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+/* =======================
+Card exercicios da ficha 
+=========================*/
+
+
+/* Card que agrupa os exercícios da ficha */
+.lista-exercicios-treino {
+    background: var(--treino-fundo-card);
+    padding: 16px;
+    margin-bottom: 20px;
+
+
+    border-radius: 14px;
+    border: 1px solid var(--cor-destaque);
+    box-sizing: border-box;
+
+}
+
+/* Título da lista de exercícios */
+.lista-exercicios-treino h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    font-size: 16px;
+
+}
+
+/* Área de progresso do treino */
+.progresso-treino {
+    margin-bottom: 20px;
+}
+
+/* Texto acima da barra */
+.texto-progresso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+/* Fundo da barra */
+
+.barra-progresso {
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    background: var(--treino-fundo-input);
+    border-radius: 10px;
+}
+
+/* Parte preenchida da barra */
+.barra-progresso-preenchida {
+    width: 25%;
+    height: 100%;
+
+    background: var(--cor-primaria);
+    border-radius: inherit;
+
+}
+
+/* Card individual do exercício */
+.item-exercicio {
+   
+    margin-bottom: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--cor-destaque);
+    overflow: hidden;
+}
+
+/* Parte resumida do exercício */
+.resumo-exercicio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+
+}
+
+/* Número do exercício */
+.numero-exercicio {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    flex-shrink: 0;
+}
+
+/* Espaço reservado para a imagem */
+.imagem-exercicio {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+
+/* Nome e grupo muscular */
+.info-exercicio {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Imagem do exercício */
+.imagem-exercicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Status do exercicio */
+
+.status-exercicio {
+    font-size: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.status-exercicio  {
+    padding: 5px;
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto-secundario);
+    border: 1px solid var(--cor-primaria);
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+/* Botão para expandir ou recolher o exercício */
+
+.btn-expandir-exercicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    padding: 0;
+    color: var(--cor-texto);
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Área que contém a tabela de séries */
+.series-exercicio {
+    margin-top: 12px;
+    width: 100%;
+}
+
+
+/* Cabeçalho e linhas da tabela */
+.linha-serie {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr 0.7fr;
+    
+ 
+    
+    align-items: center;
+    gap: 4px;
+    padding: 8px 5px ;
+    font-size: 11px;
+}
+
+/* Separação entre as séries */
+.linha-serie + .linha-serie {
+    border-bottom: 1px solid var(--treino-borda-hover);
+}
+
+/* Divisão do cabeçalho das series */
+.divisao-cor {
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto-secundario);
+    
+}
+
+/* Cabeçalho da tabela */
+.linha-serie:first-child {
+    border: 1px solid var(--treino-borda-hover);
+    font-weight: bold;
+    
+
+}
+
+
+/* Botão para adicionar uma nova série */
+.bnt-adicionar-serie, button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 3px 5px  ;
+    padding: 6px 5px;
+    
+    color: var(--cor-texto);
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===============================
+Configuração para o desktop-first 
+================================= */
+
+
+
+/* Tablet e telas maiores */
+@media (min-width: 768px) {
+
+    .painel-superior {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    
+    .controle-carga { /* Altura mínima para telas maiores  */
+    min-height: 190px;
+    }
+
+}

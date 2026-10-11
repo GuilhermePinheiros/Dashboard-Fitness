@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/criar-treino.css">
+    <link rel="stylesheet" href="../css/treino.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Guiftness</title>
 
@@ -20,9 +21,9 @@
             </div>
 
             <div class="cabecalho-titulo">
-                <h1>Criar Novo Treino</h1>
+                <h1>Monte sua rotina</h1>
                 <p>
-                    Monte seu treino de forma rápida e organizada.
+                    Crie sua ficha, defina seus objetivos e escolha os exercícios da sua rotina.
                 </p>
             </div>
 
@@ -32,7 +33,7 @@
             <div class="cabecalho-link">
                 <a href="treinos.html"> 
                     <i class="fa-regular fa-folder-open"></i>
-                    <span>Ver meus Treinos </span>
+                    <span>Suas Fichas </span>
                     <i class="fa-solid fa-arrow-right"></i>
 
                 </a>
@@ -46,26 +47,31 @@
        
         <section class="card-treino">
 
-            <header class="titulo-card">
-                <h2>Dados do treino</h2>
-                <p>
-                    Configure as informações básicas do treino.
-                </p>
+            <header class="titulo-card">    
+
+                <div class="titulo-card-topo">
+                    <i class="fa-solid fa-gear"></i>
+                    <h2>Dados da ficha</h2>  
+                </div>
+
+                <p>Defina as informações principais antes de adicionar os exercícios.</p>
 
             </header>
             <form class="form-treino">
                 <div class="campo-formulario">
                     
-                    <label for="nomeTreino">
-                        Nome do treino
+                    <label for="nome-Treino">
+                        Nome da ficha 
                     </label>
                     <div class="campo-icone">
                         <i class="fa-solid fa-dumbbell"></i>
                         <input
                         type="text"
-                        id="nomeTreino"
-                        placeholder="Ex.: Push A">
+                        id="nome-Treino"
+                        placeholder="Ex.: Ficha A - Peito e Tríceps">
                     </div>
+                    <!-- Mensagem de erro, se o campo tiver vazio -->
+                    <small class="mensagem-erro" id="erro-nome"></small>
 
                 </div>
                 <div class="campos-grid">
@@ -78,7 +84,8 @@
                             <select name="objetivoTreino"
                             class="objetivo-treino" >
                     
-                        
+                              <option value="" class="option-placeholder">Objetivo da ficha</option>
+
                                 <option value="hipertrofia">
                                     Hipertrofia
                                 </option>
@@ -93,6 +100,8 @@
                                 </option>
                     
                             </select>
+                    <!-- Mensagem de erro, se o campo tiver vazio -->
+                    <small class="mensagem-erro" id="erro-objetivo"></small>
                         </div>
                     </div>
                     <div class="campo-formulario">
@@ -102,8 +111,8 @@
                             <i class="fa-solid fa-calendar"></i>
 
 
-                            <select name="dia" id="dia">
-                            
+                            <select name="dia" id="dia-semana">
+                                <option value="" class="option-placeholder" >Dia do treino </option>
                                 <option value="segunda">
                                     Segunda-Feira
                                 </option>
@@ -126,6 +135,8 @@
                                     Domingo
                                 </option>
                             </select>
+                    <!-- Mensagem de erro, se o campo tiver vazio -->
+                    <small class="mensagem-erro" id="erro-dia-semana"></small>
                         </div>
                     </div>
                     <div class="campo-formulario">
@@ -135,9 +146,11 @@
                        <div class="campo-icone">
                         <i class="fa-solid fa-chart-bar"></i>
 
-
+                            
                            <select name="nivel" id="nivel">
-                           
+                                <option value="" class="option-placeholder">
+                                    Nível
+                                </option>
                                 <option value="iniciante">
                                     Iniciante
                                 </option>
@@ -148,6 +161,8 @@
                                     Avançado
                                 </option>
                            </select>
+                    <!-- Mensagem de erro, se o campo tiver vazio -->
+                    <small class="mensagem-erro" id="erro-nivel"></small>
                        </div>
                         
                     </div>
@@ -160,7 +175,9 @@
                             <i class="fa-solid fa-clock"></i>
                             
                             <select name="tempo" id="tempo" >
-                            
+                                <option value="" class="option-placeholder">
+                                    Duração estimada
+                                </option>
                                 <option value="15">
                                     15 minutos
                                 </option>
@@ -183,6 +200,10 @@
                                     120 minutos
                                 </option>
                             </select>
+
+                    <!-- Mensagem de erro, se o campo tiver vazio -->
+                    <small class="mensagem-erro" id="erro-tempo"></small>
+
                         </div>
                     </div>
                 </div>
@@ -201,25 +222,27 @@
         <section class="exercicios-adicionados">
 
                 <header>
-                    <h3>Exercícios adicionados </h3>
+                    <h3>Exercícios ficha </h3>
                     <span class="contador">0</span>
                 </header>
 
                 <div class="conteudo-lista">
+                    <!-- exercícios criados pelo JS -->
                     <i class="fa-solid fa-clipboard-list"></i>
 
                     <h4>Nenhum exercício adicionado</h4>
 
-                    <p>Adicione exercícios da biblioteca ao lado para montar seu treino</p>
+                    <p>Adicione exercícios da biblioteca ao lado para montar sua ficha de treino.</p>
 
                 </div>
+                <p id="mensagem-exercicios" class="mensagem-erro"></p>
          </section>
 
          <footer class="acoes-treino">
 
             <button>
                 <i class="fa-regular fa-floppy-disk"></i>
-                Salvar treino
+                Salvar ficha
             </button>
 
          </footer>
@@ -227,59 +250,53 @@
 
         </section>
         
-        <section class="biblioteca">
-            <header>
-                <h2>Biblioteca de Exercícios</h2>
-                <p>Busque por exercícios ou filtre por grupo muscular</p>
-            </header>
-            <div class="campo-busca">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-               <input 
-               type="search" 
-               name="busca"
-               id="busca"
-               placeholder="Buscar execícios ou aparelho...">
-            </div>
-            <div class="filtros">
-                <button class="ativo" data-filtro="todos">Todos</button>
-                <button data-filtro="peito">Peito</button>
-                <button data-filtro="costas">Costas</button>
-                <button data-filtro="pernas">Pernas</button>
-                <button data-filtro="ombros">Ombros</button>
-                <button data-filtro="braco">Braços</button>
-                <button data-filtro="abdomen">Abdômen</button>
-            </div>
-            <div class="lista-exercicio">
-            <!--     <article class="card-exercicio" data-grupo="peito">
-
-                    <img src="#" alt="Pessoa executando o exercício Supino Reto.">
-
-                    <div class="conteudo-exercicio">
-
-                        <h3>Supino Reto</h3>
-  
-                        <p class="descricao">
-                            Trabalha os músculos do peito,  <br>ombros e tríceps.
-                        </p>
-                    </div>
-                     <div class="acoes-exercicio">
-
-                        <div class="tags">
-                            <span class="tag-musculo-peito">Peito</span>
-
-                           
-                           
+        
+            <section class="biblioteca">
+                <header>
+                    <h2>Biblioteca de Exercícios</h2>
+                    <p>Busque por exercícios ou filtre por grupo muscular</p>
+                </header>
+                <div class="campo-busca">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                   <input
+                   type="search"
+                   name="busca"
+                   id="busca"
+                   placeholder="Buscar execícios ou aparelho...">
+                </div>
+                <div class="filtros">
+                    <button class="ativo" data-filtro="todos">Todos</button>
+                    <button data-filtro="peito">Peito</button>
+                    <button data-filtro="costas">Costas</button>
+                    <button data-filtro="pernas">Pernas</button>
+                    <button data-filtro="ombros">Ombros</button>
+                    <button data-filtro="braco">Braços</button>
+                    <button data-filtro="abdomen">Abdômen</button>
+                </div>
+                <div class="lista-exercicio">
+                <!--     <article class="card-exercicio" data-grupo="peito">
+                        <img src="#" alt="Pessoa executando o exercício Supino Reto.">
+                        <div class="conteudo-exercicio">
+                            <h3>Supino Reto</h3>
+                            <p class="descricao">
+                                Trabalha os músculos do peito,  <br>ombros e tríceps.
+                            </p>
                         </div>
-                        
-                        <button class="btn-adicionar">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div> -->
-                </article>
-            </div>      
-        </section>
+                         <div class="acoes-exercicio">
+                            <div class="tags">
+                                <span class="tag-musculo-peito">Peito</span>
+            
+            
+                            </div>
+            
+                            <button class="btn-adicionar">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div> -->
+                    </article>
+                </div>
+            </section>
+        </div>
       
      
     </section>
@@ -300,39 +317,39 @@
     
 
    </main>
-       <nav class="menu-inferior">
+       <nav class="menu-inferior"> <!-- Menu de navegação -->
 
             <a  href="../index.html">
                 <i class="fa-solid fa-house"></i>
                 <span>Home</span>
             </a>
 
-            <a class="ativo"  href="pages/criar-treino.html">
+            <a class="ativo"  href="criar-treino.html">
                <i class="fa-solid fa-dumbbell"></i>
                 <span>Criar</span>
             </a>
 
-            <a href="pages/treinos.html" class="btn">
+            <a href="treinos.html" class="btn">
                 <i class="fa-solid fa-list"></i>
-                <span>Treinos</span>
+                <span>Fichas</span>
             </a>
 
-            <a href="pages/historico-treino.html">
+            <a href="historico-treino.html">
                 <i class="fa-solid fa-clock"></i>
                 <span>Histórico</span>
             </a>
 
-            <a href="pages/exercicios-favoritos.html">
+            <a href="exercicios-favoritos.html">
                 <i class="fa-solid fa-heart"></i>
                 <span>Favoritos</span>
             </a>
 
-            <a href="pages/perfil.html">
+            <a href="perfil.html">
                 <i class="fa-solid fa-user"></i>
                 <span>Perfil</span>
             </a>
 
-            <a href="pages/configuracoes.html">
+            <a href="configuracoes.html">
                 <i class="fa-solid fa-gear"></i>
                 <span>Configurações</span>
             </a>

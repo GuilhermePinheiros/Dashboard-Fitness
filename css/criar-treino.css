@@ -1,0 +1,955 @@
+@charset "UTF-8";
+
+
+/* =========================
+   VARIÁVEIS DA PÁGINA
+   ========================= */
+
+:root {
+
+    /* Fundo dos elementos */
+    --criar-fundo-card: rgba(7, 17, 31, .82);
+    --criar-fundo-biblioteca: rgba(7, 17, 31, .88);
+    --criar-fundo-exercicio: rgba(16, 24, 40, .92);
+    --criar-fundo-campo: rgba(15, 25, 40, .85);
+
+    /* Bordas */
+    --criar-borda-card: rgba(0, 110, 255, .20);
+    --criar-borda-exercicio: rgba(255, 255, 255, .05);
+    --criar-borda-hover: rgba(0, 110, 255, .35);
+
+    /* Textos */
+    --criar-texto-secundario: #b8c0cc;
+    --criar-texto-placeholder: #7d8b9f;
+
+    /* Sombras */
+    --criar-sombra-hover: rgba(0, 110, 255, .15);
+
+
+    /* =========================
+       CORES DAS TAGS
+       ========================= */
+
+    --tag-peito1: #ff5b5b;
+    --tag-peito2: #ff6d6d;
+    --tag-peito3: rgba(255, 60, 60, .12);
+
+    --tag-costa1: rgb(0, 0, 245);
+    --tag-costa2: rgb(63, 63, 245);
+    --tag-costa3: rgba(70, 70, 250, .24);
+
+    --tag-ombros1: #f59e0b;
+    --tag-pernas1: #22c55e;
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+.cabecalho-pagina {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.cabecalho-esquerdo {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.cabecalho-direito {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.cabecalho-titulo h1 {
+    font-size: 44px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.cabecalho-titulo p {
+    font-size: 17px;
+
+    color: var(--criar-texto-secundario);
+
+    line-height: 1.5;
+}
+
+
+/* Ícone do cabeçalho */
+
+.cabecalho-icone {
+    position: relative;
+}
+
+
+.cabecalho-icone i {
+    position: absolute;
+
+    left: 50px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8b98aa;
+
+    pointer-events: none;
+}
+
+
+/* Link do cabeçalho */
+
+.cabecalho-link a {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--cor-primaria);
+
+   /*  border: 1px solid rgba(0, 110, 255, .60); */
+
+    background: var(--cor-destaque);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+
+.cabecalho-link a:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--cor-destaque);
+
+    box-shadow:
+        0 0 20px rgba(0, 110, 255, .20);
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+   ========================= */
+
+.area-principal {
+    display: grid;
+
+    grid-template-columns: 470px 1fr;
+
+    gap: 18px;
+
+    height: calc(97vh - 210px);
+}
+
+
+.card-treino,
+.biblioteca {
+    min-height: 0;
+}
+
+
+/* =========================
+   CARD DE DADOS DO TREINO
+   ========================= */
+
+.card-treino {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    background: var(--criar-fundo-card);
+
+    border: 1px solid var(--criar-borda-card);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    backdrop-filter: blur(12px);
+}
+
+
+.titulo-card {
+    margin-bottom: 35px;
+}
+
+.titulo-card-topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-card-topo i {
+    color: var(--cor-destaque);
+    font-size: 18px;
+}
+
+.titulo-card-topo h2 {
+    font-size: 28px;
+}
+
+.titulo-card p {
+    margin-top: 5px;
+    color: var(--cor-texto-secundario);
+    line-height: 1.3;
+}
+
+
+/* =========================
+   FORMULÁRIO
+   ========================= */
+
+.form-treino {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* Campos em duas colunas */
+
+.campos-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* Campos */
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 6px;
+
+    background: var(--criar-fundo-campo);
+
+    color: white;
+}
+
+
+/* Campos com ícone */
+
+.campo-icone {
+    position: relative;
+}
+
+
+.campo-icone input,
+.campo-icone select {
+    padding-left: 42px;
+}
+
+
+.campo-icone i {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--cor-destaque);
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Foco */
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+
+    border-color: var(--cor-destaque);
+
+    box-shadow:
+        0 0 12px rgba(0, 110, 255, .25);
+}
+
+
+/* Placeholder */
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: var(--criar-texto-placeholder);
+}
+
+
+/* Textarea */
+
+.campo-formulario textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* Labels */
+
+.campo-formulario label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+.option-placeholder {
+    color: var(--cor-placeholder);
+   
+}
+
+
+/* =========================
+   EXERCÍCIOS ADICIONADOS
+   ========================= */
+
+.exercicios-adicionados {
+    background: var(--criar-fundo-campo);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 18px;
+
+    padding: 23px;
+}
+
+
+.exercicios-adicionados header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+
+/* Card criado pelo JavaScript */
+
+.exercicio-adicionado {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 5px 6px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    background: rgba(7, 17, 31, .88);
+
+    border: 1px solid rgba(0, 110, 255, .35);
+}
+
+
+/* Contador */
+
+.contador {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 999px;
+
+    background: var(--cor-destaque-transparente);
+
+    color: var(--cor-destaque);
+
+    font-weight: 700;
+}
+
+
+/* Lista dos exercícios adicionados */
+
+.conteudo-lista {
+    max-height: 290px;
+
+    overflow-y: auto;
+
+    padding-right: 8px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--cor-destaque)
+        transparent;
+}
+
+
+/* Scrollbar */
+
+.conteudo-lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.conteudo-lista::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.conteudo-lista::-webkit-scrollbar-thumb {
+    background: var(--cor-destaque);
+
+    border-radius: 10px;
+}
+
+
+.conteudo-lista::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque-transparente);
+}
+
+
+/* Estado vazio */
+
+.conteudo-lista .fa-clipboard-list {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 110, 255, .15);
+
+    color: var(--cor-destaque);
+
+    font-size: 36px;
+}
+
+
+.conteudo-lista h4 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+
+.conteudo-lista p {
+    max-width: 320px;
+
+    margin: 0 auto;
+
+    line-height: 1.6;
+
+    color: var(--criar-texto-secundario);
+
+    font-size: .95rem;
+}
+
+
+/* =========================
+   BOTÃO SALVAR
+   ========================= */
+
+.acoes-treino button {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--cor-destaque);
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: .3s ease;
+}
+
+
+.acoes-treino button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 110, 255, .30);
+}
+
+
+.acoes-treino button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   BOTÃO REMOVER
+   ========================= */
+
+.btn-remover {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--cor-destaque);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.btn-remover:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 110, 255, .30);
+}
+
+
+/* =========================
+   MENSAGENS DE ERRO
+   ========================= */
+
+.mensagem-erro {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #ff5c5c;
+
+    font-size: .85em;
+}
+
+
+.mensagem-exercicios {
+    color: #ff4d4d;
+
+    font-size: .9rem;
+
+    text-align: center;
+
+    margin: 15px 0;
+}
+
+
+/* =========================
+   BIBLIOTECA
+   ========================= */
+
+.biblioteca {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    background: var(--criar-fundo-biblioteca);
+
+    border: 1px solid var(--criar-borda-card);
+
+    border-radius: 20px;
+
+    padding: 28px;
+}
+
+
+.biblioteca header {
+    margin-bottom: 25px;
+}
+
+
+.biblioteca h2 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+.biblioteca p {
+    color: var(--criar-texto-secundario);
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CAMPO DE BUSCA
+   ========================= */
+
+.campo-busca {
+    position: relative;
+
+    margin: 25px 0;
+}
+
+
+.campo-busca i {
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    color: #8b98aa;
+}
+
+
+.campo-busca input {
+    width: 100%;
+
+    padding: 16px 20px 16px 52px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 14px;
+
+    background: rgba(18, 30, 48, .85);
+
+    color: white;
+}
+
+
+/* =========================
+   FILTROS
+   ========================= */
+
+.filtros {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 25px 0;
+
+    flex-wrap: wrap;
+}
+
+
+.filtros button {
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: var(--criar-texto-secundario);
+
+    font-size: .9em;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.filtros button:hover {
+    background: rgba(0, 110, 255, .18);
+
+    color: white;
+}
+
+
+.filtros button.ativo {
+    background: var(--cor-destaque);
+
+    color: white;
+
+    box-shadow:
+        0 0 15px rgba(0, 110, 255, .35);
+}
+
+
+/* =========================
+   CARDS DA BIBLIOTECA
+   ========================= */
+
+.card-exercicio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 16px 18px;
+
+    background: var(--criar-fundo-exercicio);
+
+    border: 1px solid var(--criar-borda-exercicio);
+
+    border-radius: 18px;
+
+    margin-bottom: 10px;
+
+    transition: .3s ease;
+}
+
+
+.card-exercicio:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--criar-borda-hover);
+
+    box-shadow:
+        0 12px 25px var(--criar-sombra-hover);
+}
+
+
+/* Imagem */
+
+.card-exercicio img {
+    width: 120px;
+    
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+
+    display: block;
+}
+
+
+/* Conteúdo */
+
+.conteudo-exercicio {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.conteudo-exercicio h3 {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+
+.descricao {
+    color: var(--criar-texto-secundario);
+
+    line-height: 1.5;
+
+    font-size: .95rem;
+}
+
+
+/* Ações */
+
+.acoes-exercicio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-left: auto;
+}
+
+
+/* =========================
+   TAG PEITO
+   ========================= */
+
+.peito {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 14px;
+
+    border-radius: 12px;
+
+    font-size: .90rem;
+    font-weight: 600;
+
+    border: 1px solid var(--tag-peito1);
+
+    color: var(--tag-peito2);
+
+    background: var(--tag-peito3);
+}
+
+
+/* =========================
+   TAG COSTAS
+   ========================= */
+
+.costas {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 14px;
+
+    border-radius: 12px;
+
+    font-size: .90rem;
+    font-weight: 600;
+
+    border: 1px solid var(--tag-costa1);
+
+    color: var(--tag-costa2);
+
+    background: var(--tag-costa3);
+}
+
+
+/* =========================
+   LISTA DA BIBLIOTECA
+   ========================= */
+
+.lista-exercicio {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding-right: 8px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--cor-destaque)
+        transparent;
+}
+
+
+.lista-exercicio::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.lista-exercicio::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.lista-exercicio::-webkit-scrollbar-thumb {
+    background: var(--cor-destaque);
+
+    border-radius: 10px;
+}
+
+
+.lista-exercicio::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque-transparente);
+}
+
+
+/* Botão adicionar */
+
+.lista-exercicio button {
+    width: 44px;
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--cor-destaque);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.lista-exercicio button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(0, 110, 255, .35);
+}

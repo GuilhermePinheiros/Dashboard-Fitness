@@ -4,11 +4,33 @@
 
 const filtros = document.querySelectorAll('.filtros button');
 
-const lista = document.querySelector(".lista-exercicio");
+const lista = document.querySelector('.lista-exercicio');
 
 const listaAdicionados = document.querySelector('.conteudo-lista');
 
 const contador = document.querySelector('.contador');
+//Configurações da lupa 
+const campoBusca = document.querySelector('#busca');
+const lupa = document.querySelector('.campo-busca i');
+
+// Elementos  Formulário do dados do treino 
+const nometreino = document.querySelector("#nome-Treino");
+
+const objetivo = document.querySelector(".objetivo-treino")
+
+const diaSemana = document.querySelector("#dia-semana");
+
+const nivelTreino = document.querySelector("#nivel");
+
+const tempoEstimado = document.querySelector("#tempo");
+
+const observacoes = document.querySelector("#observacoes");
+
+const botaoSalvar = document.querySelector(".acoes-treino button");
+//
+const mensagemExercicios = document.querySelector("#mensagem-exercicios");
+
+
 
 
 
@@ -43,6 +65,69 @@ const contador = document.querySelector('.contador');
         grupo: "Costas",
 
         imagem: "../imagens/remada-curvada.png"
+
+        
+    },
+
+    {
+    id: 3,
+    nome: "Remada Curvada",
+
+    descricao: "Fortalece costas e lombar.",
+
+    grupo: "Costas",
+
+    imagem: "../imagens/remada-curvada.png"
+
+        
+    },
+
+    {
+    id: 4,
+    nome: "Remada Curvada",
+
+    descricao: "Fortalece costas e lombar.",
+
+    grupo: "Costas",
+
+    imagem: "../imagens/remada-curvada.png"
+
+        
+    },
+
+    {
+    id: 5,
+    nome: "Remada Curvada",
+
+    descricao: "Fortalece costas e lombar.",
+
+    grupo: "Costas",
+
+    imagem: "../imagens/remada-curvada.png"
+
+        
+    },
+    {
+    id: 6,
+    nome: "Remada Curvada",
+
+    descricao: "Fortalece costas e lombar.",
+
+    grupo: "Costas",
+
+    imagem: "../imagens/remada-curvada.png"
+
+        
+    },
+    {
+    id: 7,
+    nome: "Remada Curvada",
+
+    descricao: "Fortalece costas e lombar.",
+
+    grupo: "Costas",
+
+    imagem: "../imagens/remada-curvada.png"
 
         
     }
@@ -81,11 +166,19 @@ lista.addEventListener("click", function(event) {
 
 
         exerciciosSelecionados.push(exercicio); //push() coloca o exercício dentro do array.
+        mensagemExercicios.textContent = "";  //Faz a mennsagem de erro (red) desaparecer 
 
         console.log(exerciciosSelecionados); // console.log() mostra o array no console.
 
         mostrarExerciciosSelecionados(); // mostrarExerciciosSelecionados() pega esse array e atualiza o HTML.
+       
         atualizarContador();
+        
+        
+
+        
+
+        
     }
 
 });
@@ -159,15 +252,35 @@ lista.addEventListener("click", function(event) {
 /* ======================
 Função que vai trasformar em HTML e colocar na tela do (Exercicios selecionados) */
 function mostrarExerciciosSelecionados() {
-
+    
     let cards = "";
+    
+    // Verifica se nenhum exercício foi adicionado
+    if (exerciciosSelecionados.length === 0) {
 
+        listaAdicionados.innerHTML = `
+            <i class="fa-solid fa-clipboard-list"></i>
+
+            <h4>Nenhum exercício adicionado</h4>
+
+            <p>
+                Adicione exercícios da biblioteca ao lado para montar seu treino.
+            </p>
+        
+        `;
+
+        return;
+    }
+
+    
+//Cria os cards dos exercícios adicionados 
     for (const exercicio of exerciciosSelecionados) {
 
         cards += `
             <article class="exercicio-adicionado">
 
                 <div class="informacoes-adicionado">
+
                     <h3>${exercicio.nome}</h3>
                     <p>${exercicio.grupo}</p>
                 </div>
@@ -186,11 +299,52 @@ function mostrarExerciciosSelecionados() {
     listaAdicionados.innerHTML = cards;
 
     
+
+    
 }
+
+
+
+
+
+
+
+    
+  
+
 
 /* =======================
 5- FUNÇÃO DE ALTERAÇÃO DOS DADOS 
 =========================== */
+
+
+
+// input de busca dos exercícios
+function buscarExercicios(texto) {
+    const resultado = exercicios.filter(function(exercicio) {
+
+        return exercicio.nome.toLowerCase().includes(texto.toLowerCase());
+    });
+    
+    mostrarExercicios(resultado);
+
+    
+    
+}
+
+campoBusca.addEventListener("input", function(){
+        const texto = campoBusca.value;
+
+        buscarExercicios(texto);
+});
+
+//Evento do click da lupa 
+lupa.addEventListener("click", function() {
+
+    campoBusca.focus();
+ })
+
+
 
 //Apagar um exercício
 function removerExercicio(id) {
@@ -245,12 +399,150 @@ function atualizarContador() {
 }
 
 
+//Validador  do treino
+function validarTreino(treino) {
+
+    const erroNome = document.querySelector("#erro-nome");
+    const erroObjetivo = document.querySelector("#erro-objetivo");
+    const erroDiaSemana = document.querySelector("#erro-dia-semana");
+    const erroNivel = document.querySelector("#erro-nivel");
+    const erroTempo = document.querySelector("#erro-tempo");
+    erroNome.textContent = "";
+    erroObjetivo.textContent = "";
+    erroDiaSemana.textContent = "";
+    erroNivel.textContent = "";
+    erroTempo.textContent = "";
+
+    if (treino.nome.trim() === "") {
+        erroNome.textContent = "Informe o nome da ficha.";
+        return false;
+    }
+
+    if (treino.objetivo === "") {
+        erroObjetivo.textContent = "Selecione o objetivo do treino.";
+        return false;
+    }
+
+    if (treino.diaSemana === "") {
+        erroDiaSemana.textContent = "Selecione o dia da semana.";
+        return false;
+    }
+
+    if (treino.nivel === "") {
+        erroNivel.textContent = "Selecione o nível do treino.";
+        return false;
+    }
+
+    if (treino.tempo === "") {
+        erroTempo.textContent = "Selecione o tempo estimado.";
+        return false;
+    }
+
+    if (treino.exercicios.length === 0 ) {
+        return false;
+    }
+
+    return true;
+}
+
+// SALVAR TREINO NO LOCALSTORAGE
+
+function salvarTreino(treino) {
+   
+    //Buscar os treinos existentes
+    const treinosSalvos = JSON.parse(localStorage.getItem("treinos")) || [];
+
+    treinosSalvos.push(treino); // push() adiciona um elemento ao final de um array. // Isso é importante porque não queremos substituir os treinos anteriores.
+
+    localStorage.setItem("treinos",JSON.stringify(treinosSalvos)); // Salvar novamente
+}
 
 
 
 /* ======================
  6-EVENTOS 
  =========================*/
+
+// Eventos de correção do campos, para dasaparecer a mensagem de aviso red
+nometreino.addEventListener("input", function() {
+    if (nometreino.value.trim() !== "") {
+        document.querySelector("#erro-nome").textContent = "";
+    }
+});
+
+objetivo.addEventListener("change", function() {
+
+    if (objetivo.value !== "") {
+        document.querySelector("#erro-objetivo").textContent = "";
+    }
+
+});
+
+diaSemana.addEventListener("change", function() {
+
+    if (diaSemana.value !== "") {
+        document.querySelector("#erro-dia-semana").textContent = "";
+    }
+
+});
+
+nivelTreino.addEventListener("change", function() {
+
+    if (nivelTreino.value !== "") {
+        document.querySelector("#erro-nivel").textContent = "";
+    }
+
+});
+
+tempoEstimado.addEventListener("change", function() {
+
+    if (tempoEstimado.value !== "") {
+        document.querySelector("#erro-tempo").textContent = "";
+    }
+
+});
+
+
+
+
+ //Teste do botão salvar treino
+botaoSalvar.addEventListener("click", function(){
+     
+    
+    const treino = {
+        nome: nometreino.value,
+        objetivo: objetivo.value,
+        diaSemana: diaSemana.value,
+        nivel: nivelTreino.value,
+        tempo: tempoEstimado.value,
+        observacoes: observacoes.value,
+        exercicios: exerciciosSelecionados,
+
+        // Guarda a data e a hora em que o treino foi criado.
+        dataCriacao: new Date().toISOString()
+
+    };
+
+// Aparecer a mensagem de erro red, se não tiver nenhum dado selecionado
+    if (treino.exercicios.length === 0) {
+
+        mensagemExercicios.textContent =
+        "Adicione pelo menos um exercício.";
+
+        return;
+    }
+
+    if (!validarTreino(treino)) {
+       
+        return;
+    }
+
+    salvarTreino(treino);
+
+    
+    
+});
+
 
  //Eventos da lixeira
 listaAdicionados.addEventListener("click", function(event) {

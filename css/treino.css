@@ -1,0 +1,619 @@
+@charset "UTF-8";
+
+:root {
+
+
+
+    /* Fundos */
+    --treino-fundo-card: rgba(7, 17, 31, .95);
+    --treino-fundo-input: rgba(18, 30, 48, .85);
+    --treino-fundo-botao: rgba(5, 54, 119, 0.15);
+
+    /* Bordas */
+    --treino-borda-card: rgba(0, 110, 255, .25);
+    --treino-borda-hover: rgba(0, 110, 255, .50);
+
+    /* Textos */
+    --treino-texto-principal: #ffffff;
+    --treino-texto-secundario: #b8c0cc;
+    --treino-texto-terciario: #8b98aa;
+
+    /* Sombras */
+    --treino-sombra-card: 0 10px 25px rgba(0, 110, 255, .15);
+    --treino-sombra-hover: 0 0 20px rgba(0, 110, 255, .25);
+
+    /* Tags dos cards  */
+    --treino-card-azul: #1457c5;
+    --treino-card-verde: #008f5a;
+    --treino-card-roxo: #6840b8;
+    --treino-card-laranja: #c96b0a;
+    --treino-card-texto: #ffffff;
+    --treino-card-borda: rgba(255, 255, 255, .08);
+
+    /* Tags dos treinos */
+    --treino-tag-hipertrofia: #ff5b5b;
+    --treino-tag-forca: #006eff;
+    --treino-tag-definicao: #22c55e;
+    --treino-tag-condicionamento: #8b5cf6;
+
+    /* Ações */
+    --treino-cor-editar: #006eff;
+    --treino-cor-excluir: #ff4d4d;
+
+    /* Espaçamentos */
+    --treino-radius-card: 10px;
+    --treino-radius-botao: 8px;
+
+    /* Transições */
+    --treino-transicao: .3s ease;
+}
+
+
+/* cabeçalho  */
+.cabecalho-treinos {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.titulo-pagina {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.titulo-pagina h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--cor-texto);
+    line-height: 1.1;
+}
+
+.titulo-pagina p {
+    font-size: 14px;
+    color: var(--cor-texto-secundario);
+}
+
+/* Botão do criar-treino */
+
+.btn-novo-treino {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 12px 18px;
+
+    
+    color: var(--cor-texto);
+
+    background: var(--cor-destaque);
+
+    border: 1px solid var(--cor-primaria);
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 
+    background-color .3s ease,
+    border-color .3s ease,
+    transform .3s ease,
+    box-shadowm .3s ease;
+}
+
+.btn-novo-treino:hover {
+    
+    border-color: var(--cor-destaque);
+
+    transform: translateY(-3px);
+
+   box-shadow:  0 0 20px rgba(0, 110, 255, .20);
+       
+}
+
+/* =====================
+4 CARDS DO RESUMO
+======================== */
+
+.resumo-treinos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+/* Card individual */
+.card-resumo {
+    position: relative;
+    min-height: 80px;
+    padding: 16px;
+    border: 1px solid var(--treino-borda-card);
+    border-radius: 15px;
+    color: var(--treino-card-texto);
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card-resumo:hover {
+    transform: translateY(-3px);
+}
+
+/* conteúdo */
+.card-resumo-conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Titulo */
+.card-resumo-conteudo > span {
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+/* número */
+.card-resumo-conteudo strong {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Unidade "min" */
+.card-resumo-conteudo strong small {
+    font-size: 10px;
+    margin-left: 3px;
+    font-weight: 600;
+
+    
+}
+
+/* Ícone */
+.card-resumo > i {
+    margin-left: auto;
+    font-size: 20px;
+    opacity: .75;
+}
+
+/* Cores dos cards  */
+.card-total {
+    background: var(--treino-card-azul);
+}
+
+.card-semana {
+    background: var(--treino-card-verde);
+}
+
+.card-exercicios {
+    background: var(--treino-card-roxo);
+}
+
+.card-duracao {
+    background: var(--treino-card-laranja);
+}
+
+/* ===================
+BUSCA E FILTROS
+===================== */
+
+.filtros-treinos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+/* campo busca */
+
+.campo-busca-treinos {
+    position: relative;
+
+    flex: 1;
+}
+
+/* input */
+
+.campo-busca-treinos input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 18px 0 48px;
+
+    border: 1px solid var(--treino-borda-card);
+
+    border-radius: 8px;
+
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto);
+
+    font-family: var(--font-padrao);
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .3s;
+
+
+}
+
+.campo-busca-treinos i {
+    position: absolute;
+
+    left: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+   
+
+    pointer-events: none;
+}
+
+.campo-busca-treinos input:focus {
+    border-color: var(--cor-destaque);
+
+    box-shadow: var(--treino-sombra-hover);
+
+}
+
+.campo-busca-treinos input::placeholder {
+    color: var(--cor-placeholder);
+}
+
+/*===============
+FIILTRO OBJETIVO 
+ ================== */
+
+.filtro-objetivo { /* largura fixa para todos os objetivos */
+    width: 220px;
+}
+
+.filtro-objetivo select {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--treino-borda-card);
+    border-radius: 8px;
+
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto);
+
+    font-family: var(--font-padrao);
+
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.filtro-objetivo select:focus {
+    border-color: var(--cor-destaque);
+
+    box-shadow: var(--treino-sombra-hover);
+
+}
+
+/* Botão de filtros */
+
+.btn-filtros {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--treino-borda-card);
+
+    border-radius: 8px;
+
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto-secundario);
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-filtros:hover {
+    border-color: var(--cor-destaque);
+
+    color: var(--cor-destaque);
+
+    background-color: var(--treino-fundo-botao);
+
+    transform: translatey(-2px);
+}
+
+
+/*==================
+ Criar as fichas  ///////////////////////////////////////////////////////////////
+ ===================  */
+
+.lista-treinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));  /* O navegador calcula automaticamente quantos cards cabem */
+
+    gap: 10px;
+    padding: 20px 20px;
+
+    
+
+    
+}
+
+.card-ficha {
+    display: flex;
+    min-height: 260px;
+    background: rgba(3, 15, 30, .88);
+    border: 2px solid var(--cor-primaria);
+    border-radius: 22px;
+
+    overflow: hidden;
+}
+
+/* imagem */
+.imagem-ficha {
+    width: 30%;
+    min-height: 260px;
+    flex-shrink: 0;
+    overflow: hidden;
+    
+}
+
+.imagem-ficha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Conteúdo da ficha */
+.conteudo-ficha {
+
+    width: 65%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.cabecalho-ficha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+/* Titulo  */
+.cabecalho-ficha h2 {
+    color: var(--cor-texto);
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+.titulo-destaque {
+    color: var(--cor-destaque);
+}
+
+/* Tag Objetivo do Treino */
+.tag-ficha {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    color: var(--cor-destaque);
+    background: rgba(0, 110, 255, 0.12);
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tag-ficha i {
+    font-size: 13px;
+}
+
+/* Dia da semana  */
+.dia-ficha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 8px 0 16px;
+
+    color: rgba(190, 220, 255, 0.85);
+    font-size: 15px;
+}
+
+.dia-ficha i {
+    color: var(--cor-texto);
+    font-size: 15px;
+}
+
+/* Bloco de informação da ficha do meio  */
+.informacoes-ficha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--cor-destaque);
+    border-radius: 12px;
+
+    margin-bottom: 14px;
+
+    color: var(--cor-texto);
+    font-size: 14px;
+}
+
+/* Criando as divisorias  */
+.informacoes-ficha span + span {
+    border-left: 1px solid var(--cor-destaque);
+    padding-left: 15px;
+    
+}
+
+.informacoes-ficha i {
+    color: var(--cor-destaque);
+    margin-right: 5px;
+}
+
+.informacoes-ficha span {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* lista de exercícios da ficha. */
+.exercicios-ficha {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    color: rgba(190, 220, 255, 0.85);
+
+    font-size: 13px;
+}
+
+.exercicios-ficha > i {
+    color: var(--cor-destaque);
+    margin-right: 5px;
+}
+
+/* OS pontos de divisoria */
+.exercicios-ficha span + span::before {
+    content: "·";
+    color: var(--cor-destaque);
+    margin-right: 8px;
+    font-size: 20px;
+    
+}
+
+/* Linha azul antes do botões */
+.acoes-ficha {
+    border-top: 1px solid var(--cor-destaque);
+    margin-top: 10px;
+    padding-top: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Botão iniciar  */
+.btn-iniciar {
+    background-color: var(--cor-destaque);
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 6px 10px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-iniciar:hover {
+    filter: brightness(1.15);
+}
+
+/* Linha de dvisória azul */
+.acoes-ficha .btn-editar {
+    position: relative;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+.acoes-ficha .btn-editar::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 20px;
+    border-left: 1px solid var(--cor-destaque);
+}
+
+/* Botão editar */
+.btn-editar {
+    background: var(--treino-fundo-input);
+    color: var(--cor-destaque);
+
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+
+    border: 1px solid var(--treino-borda-hover);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 12px;
+
+
+}
+
+.btn-editar:hover {
+    filter: brightness(1.20);
+}
+
+/* Botão excluir */
+.btn-excluir {
+    background: var(--treino-fundo-input);
+    color: var(--treino-cor-excluir);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid var(--treino-cor-excluir);
+}
+
+.btn-excluir:hover {
+    background-color: rgba(255, 77, 77, 0.15);
+    color: var(--treino-cor-excluir);
+}
+

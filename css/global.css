@@ -1,98 +1,120 @@
 @charset "UTF-8";
 
+/* =========================
+   VARIÁVEIS GLOBAIS
+   ========================= */
+
 :root {
-    --corFundo0: rgb(26, 32, 88);
-    --cor1: #006eff;
-    --cor2: #1b8cff;
-    --cor3: rgba(0,140,255,0.4);
 
-    --font-padrao: Arial, Helvetica,  Sans-serif;
-    --font-destaque: ;
+    /* Cores principais */
+    --cor-fundo: rgb(26, 32, 88);
+    --cor-primaria: #006eff;
+    --cor-destaque: #1b8cff;
+    --cor-destaque-transparente: rgba(0, 140, 255, .40);
+
+    /* Textos */
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #b8c0cc;
+    --cor-placeholder: #7d8b9f;
+
+    /* Fontes */
+    --font-padrao: Arial, Helvetica, sans-serif;
 }
 
-/* Remove espaços padrões do navegador */
+
+/* =========================
+   RESET
+   ========================= */
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    
 }
 
-html, body {
+
+html,
+body {
     width: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
 }
 
-main {
-    margin: auto;
-    
-    padding: 40px;
-}
+
+/* =========================
+   BODY
+   ========================= */
 
 body {
     font-family: var(--font-padrao);
-    color: white;
 
-    background-color: var(--corFundo0); /* Se caso o sevidor demorar carregar a imagem*/
-    background-image: linear-gradient(rgba(5,12,24,.78)), url(../imagens/fundo-index02.png);
+    color: var(--cor-texto);
+
+    background-color: var(--cor-fundo);
+
+    background-image:
+        linear-gradient(rgba(5, 12, 24, .78)),
+        url("../imagens/fundo-index02.png");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
-    
+
+    min-height: 100vh;
 }
 
+
+/* =========================
+   MAIN
+   ========================= */
+
+main {
+    margin: auto;
+    padding: 40px;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
 
 .logo {
     display: flex;
-   
     align-items: center;
+
     gap: 15px;
     padding: 5px;
-   
 }
 
 .logo i {
-    
     font-size: 34px;
-    color: var(--cor2);
+    color: var(--cor-destaque);
 }
 
 .logo span {
-    color: var(--cor2);
-
+    color: var(--cor-destaque);
 }
 
 .texto-logo h2 {
-    color: white;
+    color: var(--cor-texto);
     font-size: 20px;
 }
 
 .texto-logo span {
-    color: var(--cor2);
+    color: var(--cor-destaque);
     font-size: 18px;
     font-weight: bold;
 }
 
-/*Configuração da SIDEBAR*/
+
+/* =========================
+   MENU INFERIOR
+   ========================= */
 
 .menu-inferior {
     position: fixed;
 
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 80px;
-}
-
-
-
-.menu-inferior {
-    position: fixed;
     bottom: 0;
     left: 0;
 
@@ -109,14 +131,14 @@ body {
 
     border-top: 1px solid rgba(0, 110, 255, .25);
 
-    box-shadow: 0 0 12px rgba(0,110,255,.4);
+    box-shadow:
+        0 0 12px rgba(0, 110, 255, .40);
 
-    border-radius: 20px 20px 0 0 ;
+    border-radius: 20px 20px 0 0;
 
     z-index: 1000;
-
-    
 }
+
 
 .menu-inferior a {
     flex: 1;
@@ -130,6 +152,7 @@ body {
     gap: 6px;
 
     text-decoration: none;
+
     color: #b8c0cc;
 
     transition: .3s;
@@ -137,23 +160,28 @@ body {
     position: relative;
 }
 
+
 .menu-inferior a i {
     font-size: 22px;
     margin-bottom: 2px;
 }
+
 
 .menu-inferior a span {
     font-size: 12px;
     font-weight: 500;
 }
 
+
 .menu-inferior a.ativo {
-    color: var(--cor2);
+    color: var(--cor-destaque);
 }
+
 
 .menu-inferior a.ativo i {
     transform: translateY(-3px);
 }
+
 
 .menu-inferior a.ativo::before {
     content: "";
@@ -170,13 +198,32 @@ body {
 
     border-radius: 50%;
 
-    background: var(--cor2);
+    background: var(--cor-destaque);
 
-    box-shadow: 0 0 10px var(--cor2);
+    box-shadow:
+        0 0 10px var(--cor-destaque);
 }
 
 
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
 
+@media (max-width: 560px) {
 
+    main {
+        padding: 20px;
+    }
 
+    .menu-inferior {
+        height: 70px;
+    }
 
+    .menu-inferior a i {
+        font-size: 20px;
+    }
+
+    .menu-inferior a span {
+        font-size: 11px;
+    }
+}

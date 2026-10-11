@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/treino-ativo.css"> <!-- CSS especifico dessa página -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/treino.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Treino em execução</title>
+</head>
+<body>
+    <header class="cabecalho-treino">
+
+    <a href="treinos.html" class="btn-voltar">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar
+    </a>
+
+    <div class="titulo-treino">
+
+        <div class="icone-treino">
+            <i class="fa-solid fa-dumbbell"></i>
+        </div>
+
+        <div>
+            <h1 id="tituloTreino"></h1>
+
+            <span class="status-treino">
+                <i class="fa-solid fa-circle"></i>
+                Treino em andamento
+            </span>
+        </div>
+
+    </div>
+
+    </header>   
+    
+<main>
+    <div class="painel-superior">
+        <section class="controle-carga">
+            <h2>
+                <i class="fa-solid fa-chart-column"></i>
+                Controle de carga
+            </h2>
+            <div class="carga-conteudo">
+                <div class="exercicio-carga">
+                    <h3>
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Supino Reto
+                    </h3>
+                    <div class="comparacao-carga">
+                        <div>
+                            <i class="fa-solid fa-clock"></i>
+
+                            <span>Última sessão</span>
+                            <strong>20 kg × 10 reps</strong>
+                        </div>
+                        <div>
+
+                            <i class="fa-solid fa-dumbbell"></i>
+
+                            <span>Série atual</span>
+                            <strong>22 kg × 8 reps</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="resultado-carga">
+                    <strong>↗ +2 kg</strong>
+                    <span>
+                        Aumentou a carga
+                        em relação ao último treino.
+                    </span>
+                </div>
+            </div>
+            <div class="info-carga">
+                <i class="fa-solid fa-circle-info"></i>
+                Comparação com seu último treino.
+            </div>
+        </section>
+        <section class="observacao-ficha">
+            <h2>
+                <i class="fa-solid fa-clipboard"></i>
+                Observação da ficha
+            </h2>
+            <p id="textoObservacao" class="texto-observacao">
+                Começar com cargas leves e focar na execução durante o treino.
+            </p>
+            <button class="btn-editar-observacao">
+                <i class="fa-solid fa-pen"></i>
+                Editar
+            </button>
+        </section>
+    </div>
+
+    <!--======================
+    Exercicios da ficha  
+    ==========================-->
+
+    <section class="lista-exercicios-treino">
+
+        <h2>
+            <i class="fa-solid fa-list-check"></i>
+            Exercícios da ficha
+        </h2>
+
+        <div class="progresso-treino">
+            <div class="texto-progresso">
+                <span>Progresso do treino</span>
+                <strong>1 de 4 concluídos</strong>
+            </div>
+
+            <div class="barra-progresso">
+                <div class="barra-progresso-preenchida"></div>
+            </div>
+        </div>
+
+        <div class="lista-exercicios">
+
+            <article class="item-exercicio">
+
+                <!-- Parte resumida: sempre visível -->
+                <div class="resumo-exercicio">
+
+                    <span class="numero-exercicio">1</span>
+
+                    <div class="imagem-exercicio">
+                        <img src="../imagens/ficha/img-supino-reto.jfif" alt="Imagem de uma pessoa fazendo supino reto">
+                        <!-- Imagem do exercício será adicionada depois -->
+                    </div>
+
+                    <div class="info-exercicio">
+                        <h3>Supino Reto</h3>
+                        <span class="grupo-muscular">Peito</span>
+                    </div>
+
+                    <span class="status-exercicio">Pendente</span>
+
+                     <button type="button"
+                        class="btn-expandir-exercicio"
+                        aria-expanded="false"
+                        aria-controls="detalhesSupino">
+                    <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+                <div class="detalhes-exercicio" id="detalhesSupino"> <!-- Parte detalhada: aparece ao expandir -->
+
+                    <div class="series-exercicio"> <!-- amanhã resolver o problema de onde vai vim esse dados  -->
+
+                        <div class="linha-serie divisao-cor">
+                            <span>Série</span>
+                            <span>Carga</span>
+                            <span>Repetições</span>
+                            <span>Descanso</span>
+                            <span>Status</span>
+                        </div>
+
+                        <div class="linha-serie">
+                            <span>1</span>
+                            <span>20 kg</span>
+                            <span>12</span>
+                            <span>01:30</span>
+                            <span>Pendente</span>
+                        </div>
+
+                        
+                        <div class="linha-serie">
+                            <span>2</span>
+                            <span>20 kg</span>
+                            <span>12</span>
+                            <span>01:30</span>
+                            <span>Pendente</span>
+                        </div>
+
+                        
+                        <div class="linha-serie">
+                            <span>3</span>
+                            <span>20 kg</span>
+                            <span>12</span>
+                            <span>01:30</span>
+                            <span>Pendente</span>
+                        </div>
+
+                            <div class="linha-serie">
+                            <span>4</span>
+                            <span>20 kg</span>
+                            <span>12</span>
+                            <span>01:30</span>
+                            <span>Pendente</span>
+                        </div>
+
+                        
+
+
+                        <button type="button" class="btn-adicionar-serie">
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar série
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+</main>
+    <nav class="menu-inferior">
+
+            <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a   href="criar-treino.html">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span>Criar</span>
+            </a>
+
+            <a href="treinos.html" >
+                <i class="fa-solid fa-list"></i>
+                <span>Fichas</span>
+            </a>
+
+            <a href="historico-treino.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="exercicios-favoritos.html">
+                <i class="fa-solid fa-heart"></i>
+                <span>Favoritos</span>
+            </a>
+
+            <a href="perfil.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+            </a>
+
+            <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Configurações</span>
+            </a>
+
+
+    </nav>
+
+    <script src="../js/treino-ativo.js"></script>
+</body>
+</html>
