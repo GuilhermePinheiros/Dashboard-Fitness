@@ -97,119 +97,175 @@
     <!--======================
     Exercicios da ficha  
     ==========================-->
-
-    <section class="lista-exercicios-treino">
-
-        <h2>
-            <i class="fa-solid fa-list-check"></i>
-            Exercícios da ficha
-        </h2>
-
-        <div class="progresso-treino">
-            <div class="texto-progresso">
-                <span>Progresso do treino</span>
-                <strong>1 de 4 concluídos</strong>
-            </div>
-
-            <div class="barra-progresso">
-                <div class="barra-progresso-preenchida"></div>
-            </div>
-        </div>
-
-        <div class="lista-exercicios">
-
-            <article class="item-exercicio">
-
-                <!-- Parte resumida: sempre visível -->
-                <div class="resumo-exercicio">
-
-                    <span class="numero-exercicio">1</span>
-
-                    <div class="imagem-exercicio">
-                        <img src="../imagens/ficha/img-supino-reto.jfif" alt="Imagem de uma pessoa fazendo supino reto">
-                        <!-- Imagem do exercício será adicionada depois -->
-                    </div>
-
-                    <div class="info-exercicio">
-                        <h3>Supino Reto</h3>
-                        <span class="grupo-muscular">Peito</span>
-                    </div>
-
-                    <span class="status-exercicio">Pendente</span>
-
-                     <button type="button"
-                        class="btn-expandir-exercicio"
-                        aria-expanded="false"
-                        aria-controls="detalhesSupino">
-                    <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-
+<div class="layout-execucao-treino">
+    
+        <section class="lista-exercicios-treino">
+    
+            <h2>
+                <i class="fa-solid fa-list-check"></i>
+                Exercícios da ficha
+            </h2>
+    
+            <div class="progresso-treino">
+                <div class="texto-progresso">
+                    <span>Progresso do treino</span>
+                    <strong>1 de 4 concluídos</strong>
                 </div>
-
-                <div class="detalhes-exercicio" id="detalhesSupino"> <!-- Parte detalhada: aparece ao expandir -->
-
-                    <div class="series-exercicio"> <!-- amanhã resolver o problema de onde vai vim esse dados  -->
-
-                        <div class="linha-serie divisao-cor">
-                            <span>Série</span>
-                            <span>Carga</span>
-                            <span>Repetições</span>
-                            <span>Descanso</span>
-                            <span>Status</span>
+    
+                <div class="barra-progresso">
+                    <div class="barra-progresso-preenchida"></div>
+                </div>
+            </div>
+    
+            <div class="lista-exercicios">
+    
+                <article class="item-exercicio">
+    
+                    <!-- Parte resumida: sempre visível -->
+                    <div class="resumo-exercicio">
+    
+                        <span class="numero-exercicio">1</span>
+    
+                        <div class="imagem-exercicio">
+                            <img src="../imagens/ficha/img-supino-reto.jfif" alt="Imagem de uma pessoa fazendo supino reto">
+                            <!-- Imagem do exercício será adicionada depois -->
                         </div>
-
-                        <div class="linha-serie">
-                            <span>1</span>
-                            <span>20 kg</span>
-                            <span>12</span>
-                            <span>01:30</span>
-                            <span>Pendente</span>
+    
+                        <div class="info-exercicio">
+                            <h3>Supino Reto</h3>
+                            <span class="grupo-muscular">Peito</span>
                         </div>
-
-                        
-                        <div class="linha-serie">
-                            <span>2</span>
-                            <span>20 kg</span>
-                            <span>12</span>
-                            <span>01:30</span>
-                            <span>Pendente</span>
-                        </div>
-
-                        
-                        <div class="linha-serie">
-                            <span>3</span>
-                            <span>20 kg</span>
-                            <span>12</span>
-                            <span>01:30</span>
-                            <span>Pendente</span>
-                        </div>
-
-                            <div class="linha-serie">
-                            <span>4</span>
-                            <span>20 kg</span>
-                            <span>12</span>
-                            <span>01:30</span>
-                            <span>Pendente</span>
-                        </div>
-
-                        
-
-
-                        <button type="button" class="btn-adicionar-serie">
-                            <i class="fa-solid fa-plus"></i>
-                            Adicionar série
+    
+                        <span class="status-exercicio">Pendente</span>
+    
+                         <button type="button"
+                            class="btn-expandir-exercicio"
+                            aria-expanded="false"
+                            aria-controls="detalhesSupino">
+                        <i class="fa-solid fa-chevron-down"></i>
                         </button>
-
-
+    
                     </div>
-
+    
+                    <div class="detalhes-exercicio" id="detalhesSupino"> <!-- Parte detalhada: aparece ao expandir -->
+    
+                        <div class="series-exercicio"> <!-- amanhã resolver o problema de onde vai vim esse dados  -->
+    
+                            <div class="linha-serie divisao-cor">
+                                <span>Série</span>
+                                <span>Carga</span>
+                                <span>Repetições</span>
+                                <span>Descanso</span>
+                                <span>Status</span>
+                            </div>
+    
+                            <div class="linha-serie">
+                                <span>1</span>
+                                <span>20 kg</span>
+                                <span>12</span>
+                                <span>01:30</span>
+                                <span>Pendente</span>
+                            </div>
+    
+    
+                            <div class="linha-serie">
+                                <span>2</span>
+                                <span>20 kg</span>
+                                <span>12</span>
+                                <span>01:30</span>
+                                <span>Pendente</span>
+                            </div>
+    
+    
+                            <div class="linha-serie">
+                                <span>3</span>
+                                <span>20 kg</span>
+                                <span>12</span>
+                                <span>01:30</span>
+                                <span>Pendente</span>
+                            </div>
+    
+                                <div class="linha-serie">
+                                <span>4</span>
+                                <span>20 kg</span>
+                                <span>12</span>
+                                <span>01:30</span>
+                                <span>Pendente</span>
+                            </div>
+    
+    
+    
+    
+                            <button type="button" class="btn-adicionar-serie">
+                                <i class="fa-solid fa-plus"></i>
+                                Adicionar série
+                            </button>
+    
+    
+                        </div>
+    
+                    </div>
+    
+                </article>
+    
+            </div>
+    
+        </section>
+    
+        <!-- Card do exercício atual -->
+        <section class="card-exercicio-atual">
+    
+            <!-- Cabeçalho do card -->
+            <h2>
+                <i class="fa-solid fa-bullseye"></i>
+                Em qual exercício estamos?
+            </h2>
+    
+            <!-- Informações do exercício atual -->
+            <div class="info-exercicio-atual">
+    
+                <div class="imagem-exercicio-atual">
+                    <img src="../imagens/ficha/img-supino-reto.jfif" alt="Supino reto">
                 </div>
+    
+                <div class="dados-exercicio-atual">
+                    <h3>Supino Reto</h3>
+                    <span>
+                        <i class="fa-solid fa-dumbbell"></i>
+                        Peito
+                    </span>
+                </div>
+    
+            </div>
+    
+            <!-- Cronômetro de descanso -->
+            <div class="cronometro-descanso">
+    
+                <i class="fa-solid fa-stopwatch"></i>
+    
+                <strong>01:30</strong>
+    
+                <span>Descanso</span>
+    
+            </div>
+    
+            <!-- Botão para pular o descanso -->
+            <div class="cronometro-acoes">
+                
+                <button type="button" class="btn-pular-descanso">
+                    <i class="fa-solid fa-forward"></i>
+                    Pular descanso
+                </button>
 
-            </article>
+                <button type="button"   class="btn-finalizar-treino">
+                    <i class="fa-solid fa-flag"></i>
+                    Finalizar Treino
+                </button>
 
-        </div>
-
-    </section>
+            </div>
+    
+        </section>
+</div>
 
 
 </main>

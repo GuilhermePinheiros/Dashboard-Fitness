@@ -567,7 +567,7 @@ Card exercicios da ficha
 
 
 /* Botão para adicionar uma nova série */
-.bnt-adicionar-serie, button {
+.series-exercicio button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -583,7 +583,216 @@ Card exercicios da ficha
     cursor: pointer;
 }
 
+/* ============================
+Invertendo a ordem dos cards 
+card-exercicio-atual pelo lista-exercicios-treino
+======================================  */
+.layout-execucao-treino {
+    display: flex;
+    flex-direction: column;
+    
+}
 
+.card-exercicio-atual {
+    order: 1;
+}
+
+.lista-exercicios-treino {
+    order: 2;
+}
+
+/* ESTILIZANDO O CARD EXERCÍCIO ATUAL  */
+
+.card-exercicio-atual {
+   
+    padding: 16px;
+    margin-bottom: 20px;
+    background: var(--treino-fundo-card);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 14px;
+    box-sizing: border-box;
+
+}
+
+/* Título */
+.card-exercicio-atual h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px ;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--cor-destaque);
+    font-size: 16px;
+    
+
+
+}
+
+.card-exercicio-atual h2 i {
+
+    color: var(--cor-primaria);
+}
+
+
+/* Espaço reservado para a imagem */
+.imagem-exercicio-atual {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    
+}
+
+/* Imagem */
+.imagem-exercicio-atual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    
+}
+
+/* Dados do exercício atual  */
+
+.info-exercicio-atual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+
+
+}
+
+.dados-exercicio-atual {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.dados-exercicio-atual h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Iconi */
+.dados-exercicio-atual span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--cor-texto);
+}
+
+.dados-exercicio-atual span i {
+    color: var(--cor-primaria);
+}
+
+/* Cronômetro de descanso */
+
+.cronometro-descanso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+
+    border: 5px solid var(--cor-primaria);
+    border-radius: 50%;
+    box-sizing: border-box;
+
+}
+/* icone */
+.cronometro-descanso > i {
+    font-size: 22px;
+    color: var(--cor-destaque);
+}
+/* numero */
+.cronometro-descanso strong {
+    font-size: 24px;
+}
+/* texto */
+.cronometro-descanso span {
+    font-size: 12px;
+    color: var(--cor-texto);
+}
+
+/* Acoes botoes */
+.cronometro-acoes {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    
+}
+
+
+
+/* Butão croonometro */
+.btn-pular-descanso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+
+ 
+    width: 100%;
+    border-radius: 14px;
+  
+    border: none;
+    padding: 12px;
+    color: var(--cor-texto);
+    background: var(--cor-primaria);
+    
+    font-size: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+}
+/* clareia o botão ao passar o mouse */
+.btn-pular-descanso:hover {
+    filter: brightness(1.1);
+}
+.btn-pular-descanso:active { /* dá um pequeno efeito ao pressionar. */
+    transform: scale(0.98);
+}
+
+
+.btn-finalizar-treino {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    border-radius: 14px;
+
+    padding: 12px;
+    
+    border: 1px solid red;
+    color: red;
+    background: var(--treino-fundo-input);
+
+    font-size: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+
+ 
+}
+
+.btn-finalizar-treino:hover {
+    filter: brightness(1.1);
+
+}
+
+.btn-finalizar-treino:active {
+    transform: scale(0.98);
+    
+}
 
 
 
