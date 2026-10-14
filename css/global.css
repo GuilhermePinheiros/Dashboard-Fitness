@@ -132,9 +132,9 @@ main {
     border-top: 1px solid rgba(0, 110, 255, .25);
 
     box-shadow:
-        0 0 12px rgba(0, 110, 255, .40);
+        0 0 5px rgba(0, 110, 255, .40);
 
-    border-radius: 20px 20px 0 0;
+    border-radius: 70px;
 
     z-index: 1000;
 }
@@ -225,5 +225,11 @@ main {
 
     .menu-inferior a span {
         font-size: 11px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-inferior  span {
+        display: none;
     }
 }
