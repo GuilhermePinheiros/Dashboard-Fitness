@@ -119,14 +119,15 @@
 .cabecalho-link a {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     gap: 12px;
 
-    padding: 5px 10px;
+    padding: 5px 5px;
 
     border-radius: 11px;
 
-    font-size: 9px;
+    font-size: 8px;
 
     border: 1px solid var(--cor-primaria);
 
@@ -256,7 +257,7 @@
 
     border-radius: 6px;
 
-    font-size: 15px;
+    font-size: 13px;
 
     background: var(--criar-fundo-campo);
 
@@ -315,13 +316,16 @@
 .campo-formulario input::placeholder,
 .campo-formulario textarea::placeholder {
     color: var(--criar-texto-placeholder);
+    
 }
 
 
 /* Textarea */
 
 .campo-formulario textarea {
-    min-height: 120px;
+    min-height: 100px;
+
+    
 
     resize: vertical;
 }
@@ -430,6 +434,84 @@
         var(--cor-destaque)
         transparent;
 }
+/* Quando o exercício for salvo com sucesso */
+
+/* Confirmação de ficha salva */
+.conteudo-lista.salvamento-concluido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+
+    min-height: 280px;
+    padding: 25px 18px;
+
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    border-radius: 18px;
+
+    animation: aparecerConfirmacao 0.5s ease;
+}
+
+/* Ícone de sucesso */
+.confirmacao-salvamento i {
+    color: #4ade80;
+    font-size: 60px;
+
+    animation: animarSucesso 0.6s ease;
+}
+
+/* Título */
+.confirmacao-salvamento h4 {
+    margin-top: 5px;
+    color: #4ade80;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+/* Mensagem */
+.confirmacao-salvamento p {
+    max-width: 300px;
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Entrada suave do card */
+@keyframes aparecerConfirmacao {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação do ícone */
+@keyframes animarSucesso {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 
 /* Scrollbar */
@@ -514,7 +596,7 @@
 .acoes-treino button {
     width: 100%;
 
-    padding: 14px 20px;
+    padding: 11px 15px;
 
     border: none;
 

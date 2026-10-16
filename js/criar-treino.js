@@ -1,3 +1,6 @@
+/* javaScript do criar-treino */
+
+
 /* =====================
 1- Seleção dos elementos
 ====================== */
@@ -539,9 +542,72 @@ botaoSalvar.addEventListener("click", function(){
 
     salvarTreino(treino);
 
+    mostrarConfirmacao();
+
     
     
 });
+
+/* Função que mostra que a ficha foi salva */
+
+function mostrarConfirmacao() {
+    listaAdicionados.innerHTML = `
+        <div class="confirmacao-salvamento">
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h4>Ficha salva com sucesso!</h4>
+
+            <p>
+                Seu treino já está disponível em Minhas Fichas.
+            </p>
+        </div>
+    `;
+
+    listaAdicionados.classList.add("salvamento-concluido");
+
+    setTimeout(function() { 
+        listaAdicionados.classList.remove("salvamento-concluido");
+       
+
+        //Voltando o card ao estado padrão
+        listaAdicionados.innerHTML = `
+            <i class="fa-solid fa-clipboard-list"></i>
+
+            <h4>Nenhum exercício adicionado</h4>
+
+            <p>
+                Adicione exercícios da biblioteca ao lado para montar seu treino.
+            </p>
+
+            
+`;
+
+        //Zerando o contador 
+        contador.textContent = "0";
+
+        // Limpar os campos do formulário
+        nometreino.value = "";
+        objetivo.value = "";
+        diaSemana.value = "";
+        nivelTreino.value = "";
+        tempoEstimado.value = "";
+        observacoes.value = "";
+
+        // Limpar os exercícios selecionados
+        exerciciosSelecionados.length = 0;
+
+        // Limpar mensagens de validação
+
+        document.querySelector("#erro-nome").textContent = "";
+        document.querySelector("#erro-objetivo").textContent = "";
+        document.querySelector("#erro-dia-semana").textContent = "";
+        document.querySelector("#erro-nivel").textContent = "";
+        document.querySelector("#erro-tempo").textContent = "";
+        mensagemExercicios.textContent = "";
+
+    }, 7000); /* esperar 7 segundos  */
+}
+
 
 
  //Eventos da lixeira
