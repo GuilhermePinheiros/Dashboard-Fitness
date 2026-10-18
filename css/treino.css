@@ -444,8 +444,8 @@ FIILTRO OBJETIVO
     font-size: 13px;
 }
 
-/* Dia da semana  */
-.dia-ficha {
+/* quantidade series */
+.quantidade-series {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -456,7 +456,7 @@ FIILTRO OBJETIVO
     font-size: 13px;
 }
 
-.dia-ficha i {
+.quantidade-series i {
     color: var(--cor-texto);
     font-size: 13px;
 }

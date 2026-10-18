@@ -25,6 +25,8 @@ const duracaoMedia = document.querySelector("#duracao-media");
 Função de criar fichas 
 =====================  */
 function criarCard(treino) {
+
+    const quantidadeSeries = treino.series ?? 3;
     
     return `
         <article class="card-ficha">
@@ -50,10 +52,10 @@ function criarCard(treino) {
 
                 </div>
 
-                <div class="dia-ficha">
+                <div class="quantidade-series">
 
-                    <i class="fa-regular fa-calendar"></i>
-                    ${treino.diaSemana} 
+                <i class="fa-solid fa-list-ol"></i>
+               ${quantidadeSeries} ${Number(quantidadeSeries) === 1 ? "série" : "séries"}
 
                 </div>
 

@@ -21,7 +21,9 @@ const nometreino = document.querySelector("#nome-Treino");
 
 const objetivo = document.querySelector(".objetivo-treino")
 
-const diaSemana = document.querySelector("#dia-semana");
+const quantidadeSeries = document.querySelector("#quantidade-series");
+
+
 
 const nivelTreino = document.querySelector("#nivel");
 
@@ -407,12 +409,12 @@ function validarTreino(treino) {
 
     const erroNome = document.querySelector("#erro-nome");
     const erroObjetivo = document.querySelector("#erro-objetivo");
-    const erroDiaSemana = document.querySelector("#erro-dia-semana");
+    const erroQuantidadeSeries = document.querySelector("#erro-quantidade-series");
     const erroNivel = document.querySelector("#erro-nivel");
     const erroTempo = document.querySelector("#erro-tempo");
     erroNome.textContent = "";
     erroObjetivo.textContent = "";
-    erroDiaSemana.textContent = "";
+    erroQuantidadeSeries.textContent = "";
     erroNivel.textContent = "";
     erroTempo.textContent = "";
 
@@ -426,9 +428,9 @@ function validarTreino(treino) {
         return false;
     }
 
-    if (treino.diaSemana === "") {
-        erroDiaSemana.textContent = "Selecione o dia da semana.";
-        return false;
+    if (!treino.series || treino.series < 1 || treino.series > 6) {
+    erroQuantidadeSeries.textContent = "Selecione a quantidade de séries.";
+    return false;
     }
 
     if (treino.nivel === "") {
@@ -481,10 +483,10 @@ objetivo.addEventListener("change", function() {
 
 });
 
-diaSemana.addEventListener("change", function() {
+quantidadeSeries.addEventListener("change", function() {
 
-    if (diaSemana.value !== "") {
-        document.querySelector("#erro-dia-semana").textContent = "";
+    if (quantidadeSeries.value !== "") {
+        document.querySelector("#erro-quantidade-series").textContent = "";
     }
 
 });
@@ -515,7 +517,7 @@ botaoSalvar.addEventListener("click", function(){
     const treino = {
         nome: nometreino.value,
         objetivo: objetivo.value,
-        diaSemana: diaSemana.value,
+        series: Number(quantidadeSeries.value),
         nivel: nivelTreino.value,
         tempo: tempoEstimado.value,
         observacoes: observacoes.value,
@@ -588,7 +590,7 @@ function mostrarConfirmacao() {
         // Limpar os campos do formulário
         nometreino.value = "";
         objetivo.value = "";
-        diaSemana.value = "";
+        quantidadeSeries.value = "";
         nivelTreino.value = "";
         tempoEstimado.value = "";
         observacoes.value = "";
@@ -600,7 +602,7 @@ function mostrarConfirmacao() {
 
         document.querySelector("#erro-nome").textContent = "";
         document.querySelector("#erro-objetivo").textContent = "";
-        document.querySelector("#erro-dia-semana").textContent = "";
+        document.querySelector("#erro-quantidade-series").textContent = "";
         document.querySelector("#erro-nivel").textContent = "";
         document.querySelector("#erro-tempo").textContent = "";
         mensagemExercicios.textContent = "";
