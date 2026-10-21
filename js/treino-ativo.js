@@ -7,6 +7,8 @@ const treinoAtual = localStorage.getItem("treinoAtual");
 // Transforma o JSON em objeto JavaScript
 const treino = treinoAtual ? JSON.parse(treinoAtual) : null;
 
+
+
 // Procura o título no HTML
 const tituloTreino = document.getElementById("tituloTreino");
 
@@ -50,8 +52,11 @@ function mostrarExercicios() {
 
                     </div>
 
-                    <span>01:30</span>
-                    <span>Pendente</span>
+                    <span>01:00</span>
+
+                    <button type="button" class="btn-concluir-serie">
+                        Concluir
+                    </button>
 
                 </div>
             `
@@ -71,7 +76,16 @@ function mostrarExercicios() {
                         <span class="grupo-muscular">${exercicio.grupo}</span>
                     </div>
 
-                    <span class="status-exercicio">Pendente</span>
+                    <div class="progresso-circular" aria-label="Progresso do exercício: 0%">
+
+                        <svg viewBox="0 0 60 60">
+                            <circle class="circulo-fundo" cx="30" cy="30" r="25"></circle>
+                            <circle class="circulo-preenchido" cx="30" cy="30" r="25"></circle>
+                        </svg>
+
+                        <span class="porcentagem-exercicio">0%</span>
+
+                    </div>
 
                     <button type="button"
                         class="btn-expandir-exercicio"
@@ -161,3 +175,165 @@ botoesExpandir.forEach((botao) => {
     });
 
 });
+
+/* =======================================
+Função do cronometro 
+===================================*/
+
+// Seleciona o elemento que exibe o tempo de descanso
+const tempoDescanso = document.querySelector(".tempo-descanso");
+
+// Seleciona o botão de pular descanso
+const botaoPularDescanso = document.querySelector(".btn-pular-descanso");
+
+// O botão começa desabilitado
+botaoPularDescanso.disabled = true;
+
+// Permite pular o descanso e concluir a série
+botaoPularDescanso.addEventListener("click", () => {
+    finalizarDescanso();
+});
+
+// Guarda o identificador do cronômetro
+let intervaloDescanso = null;
+
+// Guarda a série que está aguardando o fim do descanso
+let serieEmDescanso = null;
+
+// Atualiza o progresso circular do exercício
+function atualizarProgresso(exercicio) {
+    const botoes = exercicio.querySelectorAll(".btn-concluir-serie");
+
+            const concluidas = exercicio.querySelectorAll(
+                ".btn-concluir-serie.concluida"
+            );
+
+            const porcentagem = Math.round(
+                (concluidas.length / botoes.length) * 100
+            );
+
+            const texto = exercicio.querySelector(".porcentagem-exercicio");
+            const circulo = exercicio.querySelector(".circulo-preenchido");
+
+            texto.textContent = `${porcentagem}%`;
+
+            const circunferencia = 2 * Math.PI * 25;
+
+            circulo.style.strokeDashoffset =
+                circunferencia * (1 - porcentagem / 100);
+
+            const progresso = exercicio.querySelector(".progresso-circular");
+
+            progresso.setAttribute(
+                "aria-label",
+                `Progresso do exercício: ${porcentagem}%`
+            );
+
+            if (porcentagem === 100) {
+                progresso.classList.add("concluido");
+            }
+        }
+
+// Finaliza o descanso e conclui a série
+function finalizarDescanso() {
+
+    clearInterval(intervaloDescanso);
+    intervaloDescanso = null;
+
+    // Desabilita o botão após o fim do descanso
+    botaoPularDescanso.disabled = true;
+
+    // Libera as séries que ainda não foram concluídas
+    document.querySelectorAll(".btn-concluir-serie").forEach((botao) => {
+        if (!botao.classList.contains("concluida")) {
+            botao.disabled = false;
+        }
+    });
+
+    // Restaura o cronômetro para o tempo inicial
+    tempoDescanso.textContent = "01:00";
+
+    // Verifica se existe uma série aguardando
+    if (!serieEmDescanso) return;
+
+    // Marca a série como concluída
+    serieEmDescanso.textContent = "Concluída";
+    serieEmDescanso.classList.add("concluida");
+    serieEmDescanso.disabled = true;
+
+    // Encontra o exercício ao qual a série pertence
+    const exercicio = serieEmDescanso.closest(".item-exercicio");
+
+    // Atualiza o progresso circular desse exercício
+    atualizarProgresso(exercicio);
+
+    // Limpa a referência da série atual
+    serieEmDescanso = null;
+}
+
+// Inicia a contagem regressiva do descanso
+function iniciarDescanso() {
+
+
+    if (intervaloDescanso !== null) return;
+
+    let segundosRestantes = 60;
+    tempoDescanso.textContent = "01:00";
+
+    // Permite pular o descanso enquanto o cronômetro estiver ativo
+    botaoPularDescanso.disabled = false;
+
+    // Bloqueia todos os botões Concluir durante o descanso
+    document.querySelectorAll(".btn-concluir-serie").forEach((botao) => {
+        if (botao !== serieEmDescanso) {
+            botao.disabled = true;
+        }
+    });
+
+    intervaloDescanso = setInterval(() => {
+        segundosRestantes--;
+
+        const minutos = Math.floor(segundosRestantes / 60);
+        const segundos = segundosRestantes % 60;
+
+        tempoDescanso.textContent =
+            `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+
+        if (segundosRestantes <= 0) {
+            finalizarDescanso();
+        }
+    }, 1000);
+}
+
+
+
+/* fazer o botão conncluir atualizar a barra de progresso redonda */
+
+document.querySelectorAll(".btn-concluir-serie").forEach((botao) => { //Encontrar os botões de concluir
+    botao.addEventListener("click", () => { //Detectar o clique
+
+        // Guarda a série que iniciou o descanso
+        serieEmDescanso = botao;
+
+        // Altera o texto do botão durante o descanso
+        botao.textContent = "Descansando...";
+
+        
+
+        // Desabilita o botão temporariamente
+        botao.disabled = true;
+
+        // Inicia o cronômetro
+        iniciarDescanso();
+
+        
+
+       
+
+        const exercicio = botao.closest(".item-exercicio"); //Identificar o exercício correto
+
+
+
+    });
+});
+

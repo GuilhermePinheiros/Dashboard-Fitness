@@ -404,40 +404,74 @@ Card exercicios da ficha
 
 }
 
-/* Área de progresso do treino */
-.progresso-treino {
-    margin-bottom: 20px;
+/* Barra de progresso circular */
+.progresso-circular {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
 }
 
-/* Texto acima da barra */
-.texto-progresso {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 12px;
-}
-
-/* Fundo da barra */
-
-.barra-progresso {
+.progresso-circular svg {
     width: 100%;
-    height: 6px;
-    overflow: hidden;
-    background: var(--treino-fundo-input);
-    border-radius: 10px;
-}
-
-/* Parte preenchida da barra */
-.barra-progresso-preenchida {
-    width: 25%;
     height: 100%;
-
-    background: var(--cor-primaria);
-    border-radius: inherit;
-
+    transform: rotate(-90deg);
 }
+
+/* definir a aparência dos círculos do indicador de progresso. */
+.progresso-circular circle {
+    fill: none;
+    stroke-width: 5;
+}
+
+.circulo-fundo {
+    stroke: #334155;
+}
+
+/* Percentual azul */
+.circulo-preenchido {
+    stroke: #1685ff;
+    stroke-dasharray: 157.08;
+    stroke-dashoffset: 157.08;
+}
+
+/* centralizando a porcentagem no circulo */
+.porcentagem-exercicio {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Exercício totalmente concluído */
+.progresso-circular.concluido .porcentagem-exercicio {
+    color: #22c55e;
+}
+
+
+.progresso-circular.concluido .circulo-preenchido {
+    stroke: #22c55e;
+}
+
+/* Verde somente quando a série estiver concluída */
+.btn-concluir-serie.concluida {
+    background-color: #22c55e;
+    color: #ffffff;
+    border-color: #22c55e;
+    opacity: 1;
+    cursor: default;
+}
+
+
+/* Durante o descanso, permanece com a aparência de botão desabilitado */
+.btn-concluir-serie:disabled:not(.concluida) {
+    cursor: not-allowed;
+}
+
+
 
 /* Card individual do exercício */
 .item-exercicio {
