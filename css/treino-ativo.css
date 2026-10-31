@@ -104,6 +104,66 @@
 
     font-size: 8px;
 }
+
+/* ELementos do cronômetro e do botão  */
+
+.controle-treino {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cronometro */
+.cronometro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 12px;
+    gap: 5px;
+    font-size: 10px;
+
+    border-radius: 6px;
+    border: 1px solid var(--treino-borda-hover);
+
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto);
+}
+
+.cronometro i {
+    font-size: 12px;
+    color: var(--cor-destaque);
+}
+
+/* Pausar treino */
+.pausar-treino {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 5px;
+    gap: 5px;
+    font-size: 10px;
+
+    border-radius: 6px;
+    border: 1px solid var(--treino-borda-hover);
+
+    background: var(--cor-primaria);
+    color: var(--cor-texto);
+
+}
+
+.pausar-treino i {
+   font-size: 12px;
+}
+
+
+
+
+
+
+
 /* ======================
 CARD CONTROLE DE CARGA
 ======================= */
@@ -304,6 +364,7 @@ CARD CONTROLE DE CARGA
 
  /* Dando forma ao carde */
  .observacao-ficha {
+    
     min-height: auto;
     background: var(--treino-fundo-card);
 
@@ -355,7 +416,16 @@ CARD CONTROLE DE CARGA
     line-height: 1.5;
 }
 
-/* Botão */
+/* Botões observação */
+
+.acao-observacao {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
 
 .btn-editar-observacao {
     display: flex;
@@ -374,6 +444,25 @@ CARD CONTROLE DE CARGA
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+.btn-salvar-observacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--cor-texto);
+    background: var(--cor-destaque);
+    border: var(--cor-primaria);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
 }
 
 /* =======================

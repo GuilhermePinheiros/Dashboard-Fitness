@@ -35,10 +35,35 @@
 
     </div>
 
+    <div class="controle-treino">
+
+        
+
+        <div class="cronometro">
+            
+
+            <i class="fa-solid fa-clock"></i>
+            
+            
+
+            <span id="cronometroTreino">00:00:00</span>
+
+        </div>
+
+        <button class="pausar-treino" id="btnPausarTreino"   type="button">
+
+             <i class="fa-solid fa-pause"></i>
+             Pausar treino
+
+        </button>
+
+    </div>
+
     </header>   
     
 <main>
     <div class="painel-superior">
+
         <section class="controle-carga">
             <h2>
                 <i class="fa-solid fa-chart-column"></i>
@@ -55,23 +80,28 @@
                             <i class="fa-solid fa-clock"></i>
 
                             <span>Última sessão</span>
-                            <strong>20 kg × 10 reps</strong>
+                            <strong id="cargaAnterior"  >20 kg × 10 reps</strong>
                         </div>
                         <div>
 
                             <i class="fa-solid fa-dumbbell"></i>
 
                             <span>Série atual</span>
-                            <strong>22 kg × 8 reps</strong>
+
+                            <strong id="cargaAtual"> 22 kg × 8 reps</strong>
+
                         </div>
                     </div>
                 </div>
                 <div class="resultado-carga">
-                    <strong>↗ +2 kg</strong>
+
+                    <strong id="resultado-carga" >↗ +2 kg</strong>
+
                     <span>
                         Aumentou a carga
                         em relação ao último treino.
                     </span>
+                    
                 </div>
             </div>
             <div class="info-carga">
@@ -79,6 +109,7 @@
                 Comparação com seu último treino.
             </div>
         </section>
+
         <section class="observacao-ficha">
             <h2>
                 <i class="fa-solid fa-clipboard"></i>
@@ -87,10 +118,21 @@
             <p id="textoObservacao" class="texto-observacao">
                 Começar com cargas leves e focar na execução durante o treino.
             </p>
-            <button class="btn-editar-observacao">
-                <i class="fa-solid fa-pen"></i>
-                Editar
-            </button>
+
+            <div class="acao-observacao">
+
+                <button class="btn-editar-observacao">
+                    <i class="fa-solid fa-pen"></i>
+                    Editar
+                </button>
+
+                <button class="btn-salvar-observacao">
+                    <i class="fa-solid fa-save"></i>
+                    Salvar
+                </button>
+
+            </div>
+
         </section>
     </div>
 

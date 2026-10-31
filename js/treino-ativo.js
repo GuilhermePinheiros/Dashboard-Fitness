@@ -12,6 +12,78 @@ const treino = treinoAtual ? JSON.parse(treinoAtual) : null;
 // Procura o título no HTML
 const tituloTreino = document.getElementById("tituloTreino");
 
+// Elemento do cronômetro do treino
+const cronometroTreino = document.getElementById("cronometroTreino");
+
+const botaoPausarTreino = document.getElementById("btnPausarTreino"); //Conectar o botão de pausa
+
+ /*========================
+  Controle do cronômetro do treino
+  ============================== */
+
+let segundosTreino = 0;
+let intervaloTreino = null;
+
+function atualizarCronometro() {
+    const horas = Math.floor(segundosTreino / 3600);
+    const minutos = Math.floor((segundosTreino % 3600) / 60);
+    const segundos = segundosTreino % 60;
+
+    cronometroTreino.textContent =
+    `${String(horas).padStart(2, "0")}:${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+}
+
+/* Função que inicia o cronometro  */
+
+function iniciarCronometro() {
+
+    if (intervaloTreino !== null ) return; //Evita que o cronometro seja iniciado mais de uma vez
+
+    intervaloTreino = setInterval(() => {
+        segundosTreino++;
+        atualizarCronometro();
+    }, 1000);
+
+    botaoPausarTreino.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar treino'; //alterando o texto do pausar treino
+}
+
+//Implementar a pausa e a retomada
+function pausarCronometro() {
+    clearInterval(intervaloTreino);
+    intervaloTreino = null;
+
+    botaoPausarTreino.innerHTML = '<i class="fa-solid fa-play "></i> Retomar treino'; 
+    //Alterando o texto do retomar treino
+}
+
+//Detectar o clique 
+botaoPausarTreino.addEventListener("click", () => {
+    if (intervaloTreino !== null) {
+        pausarCronometro();
+    } else {
+        iniciarCronometro();
+    }
+})
+/* 
+iniciarCronometro(); //Inicia o cronometro manual */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Verifica se existe uma ficha selecionada
 if (treino) {
     tituloTreino.textContent = treino.nome;
@@ -22,7 +94,10 @@ if (treino) {
 /* fazer o JavaScript criar os cards automaticamente. */
 const listaExercicios = document.querySelector(".lista-exercicios");
 
+
+
 function mostrarExercicios() {
+
     if (!treino || !treino.exercicios || treino.exercicios.length === 0) {
         listaExercicios.innerHTML = "<p>Nenhum exercício encontrado nesta ficha.</p>";
         return;
@@ -37,18 +112,27 @@ function mostrarExercicios() {
             { length: quantidadeSeries },
             (_, i) => `
                 <div class="linha-serie">
+                
                     <span>${i + 1}</span>
 
                     <div class="campo-carga">
-                        <input type="number" min="0" step="0.5"
-                            value="0" aria-label="Carga da série ${i + 1}">
+                        <input type="number"
+                         class="input-carga" 
+                         min="0" 
+                         step="0.5"
+                         value="0" 
+                         aria-label="Carga da série ${i + 1}">
                         <span>kg</span>
+
                     </div>
 
                     <div>
 
-                    <input type="number" min="1"
-                        value="12" aria-label="Repetições da série ${i + 1}">
+                    <input type="number" 
+                            class="input-repeticoes"
+                            min="1"
+                            value="12"
+                            aria-label="Repetições da série ${i + 1}">
 
                     </div>
 
@@ -99,7 +183,7 @@ function mostrarExercicios() {
                     <div class="series-exercicio">
                         <div class="linha-serie divisao-cor">
                             <span>Série</span>
-                            <span>Carga (kg)</span>
+                            <span class="input-carga">Carga (kg)</span>
                             <span>Repetições</span>
                             <span>Descanso</span>
                             <span>Status</span>
@@ -115,7 +199,53 @@ function mostrarExercicios() {
 
 mostrarExercicios();
 
+iniciarCronometro();
+
 tituloTreino.textContent = treino.nome;// Coloca o nome da ficha dentro do <h1>.
+
+//recuperar os valores salvos antes de gerar o HTML de cada série.
+const chaveSeries = `seriesTreino_${treino?.nome ?? "sem-ficha"}`;
+
+const seriesSalvas = JSON.parse(
+    localStorage.getItem(chaveSeries) || "{}"
+);
+
+// Elementos do card Controle de carga
+const nomeExercicioCarga = document.querySelector(".exercicio-carga h3");
+const cargaAnterior = document.getElementById("cargaAnterior");
+const cargaAtual = document.getElementById("cargaAtual");
+const resultadoCarga = document.getElementById("resultado-carga");
+
+// Atualiza o card com os dados do exercício selecionado
+function atualizarCardCarga(exercicio, linhaSerie) {
+
+    const nome = exercicio.querySelector("h3").textContent;
+    const carga = Number(linhaSerie.querySelector("input.input-carga").value);
+    const repeticoes = Number(linhaSerie.querySelector("input.input-repeticoes").value);
+
+    const chave = `ultimaSerie_${treino.nome}_${nome}`;
+    const ultimaSerie = JSON.parse(localStorage.getItem(chave) || "null");
+
+    nomeExercicioCarga.textContent = nome;
+
+    if (ultimaSerie) {
+        cargaAnterior.textContent =
+            `${ultimaSerie.carga} kg × ${ultimaSerie.repeticoes} reps`;
+    } else {
+        cargaAnterior.textContent = "Sem sessão anterior";
+    }
+
+    cargaAtual.textContent = `${carga} kg × ${repeticoes} reps`;
+
+    if (ultimaSerie) {
+        const diferenca = carga - ultimaSerie.carga;
+
+        resultadoCarga.textContent =
+            `${diferenca > 0 ? "+" : ""}${diferenca} kg`;
+    } else {
+        resultadoCarga.textContent = "Primeira sessão";
+    }
+}
 
 
 
@@ -264,11 +394,42 @@ function finalizarDescanso() {
     // Encontra o exercício ao qual a série pertence
     const exercicio = serieEmDescanso.closest(".item-exercicio");
 
+         // Identifica a linha da série concluída
+    const linhaSerie = serieEmDescanso.closest(".linha-serie");
+
+    // Recupera a carga e as repetições digitadas
+    const carga = Number(linhaSerie.querySelector("input.input-carga").value);
+    const repeticoes = Number(linhaSerie.querySelector("input.input-repeticoes").value);
+
+    // Atualiza o card antes de salvar os novos valores
+    atualizarCardCarga(exercicio, linhaSerie);
+
+    // Identifica o nome do exercício
+    const nomeExercicio = exercicio.querySelector("h3").textContent;
+
+    // Cria uma chave específica para o exercício
+    const chaveCarga = `ultimaSerie_${treino.nome}_${nomeExercicio}`;
+
+    // Salva os dados atuais no navegador
+    localStorage.setItem(chaveCarga, JSON.stringify({
+        carga,
+        repeticoes
+    }));
+    
+
+    // Salva os dados no navegador
+    localStorage.setItem(chaveCarga, JSON.stringify({
+        carga: Number(carga),
+        repeticoes: Number(repeticoes)
+    }));
+
     // Atualiza o progresso circular desse exercício
     atualizarProgresso(exercicio);
 
     // Limpa a referência da série atual
     serieEmDescanso = null;
+
+    
 }
 
 // Inicia a contagem regressiva do descanso
@@ -336,4 +497,70 @@ document.querySelectorAll(".btn-concluir-serie").forEach((botao) => { //Encontra
 
     });
 });
+
+
+/* ====================
+CARD observação da ficha
+================*/
+
+//Evento do botão Editar
+document.querySelectorAll(".btn-editar-observacao").forEach((botao) => {
+
+    botao.addEventListener("click", ()  => {
+
+        const textoObservacao = document.getElementById("textoObservacao");
+
+        textoObservacao.contentEditable = true;
+
+        textoObservacao.focus();
+
+        
+
+       
+        
+    })
+
+})
+
+//Evento do botão salvar
+
+document.querySelector(".btn-salvar-observacao").addEventListener("click", () => {
+    
+    const textoObservacao = document.getElementById("textoObservacao");
+
+
+    const observacaoSalva = textoObservacao.textContent;
+
+    localStorage.setItem("observacaoFicha", observacaoSalva);
+
+
+    textoObservacao.contentEditable = false;
+
+});
+
+const textoObservacao = document.getElementById("textoObservacao");
+
+const observacaoSalva = localStorage.getItem("observacaoFicha");
+
+if (observacaoSalva !== null) {
+    textoObservacao.textContent = observacaoSalva;
+};
+
+
+/*====================
+CARD controle de carga
+====================  */
+
+const camposCarga = document.querySelectorAll(".input-carga");
+
+camposCarga.forEach((campo) => {
+    campo.addEventListener("input", () => {
+        const peso = Number(campo.value);
+        console.log(peso);
+
+        //Salvar a carga no localStorage
+        localStorage.setItem("cargaTeste", peso);
+    });
+});
+
 
