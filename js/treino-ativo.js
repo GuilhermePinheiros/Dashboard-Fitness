@@ -17,6 +17,11 @@ const cronometroTreino = document.getElementById("cronometroTreino");
 
 const botaoPausarTreino = document.getElementById("btnPausarTreino"); //Conectar o botão de pausa
 
+// Elementos do modal de finalização
+const modalFinalizarTreino = document.getElementById("modalFinalizarTreino");
+const botaoCancelarFinalizacao = document.getElementById("btnCancelarFinalizacao");
+const botaoConfirmarFinalizacao = document.getElementById("btnConfirmarFinalizacao");
+const botaoFinalizarTreino = document.getElementById("btn-finalizar-treino"); //seletor do botão
  /*========================
   Controle do cronômetro do treino
   ============================== */
@@ -307,7 +312,7 @@ botoesExpandir.forEach((botao) => {
 });
 
 /* =======================================
-Função do cronometro 
+Função do cronometro PULAR DESCANSO e FINALIZAR TREINO
 ===================================*/
 
 // Seleciona o elemento que exibe o tempo de descanso
@@ -465,6 +470,27 @@ function iniciarDescanso() {
         }
     }, 1000);
 }
+
+//função Butão finalizar treino
+botaoFinalizarTreino.addEventListener("click", () => {
+    modalFinalizarTreino.hidden = false;
+
+    
+});
+
+//Implementar o botão Cancelar
+
+botaoCancelarFinalizacao.addEventListener("click", () => {
+    modalFinalizarTreino.hidden = true;
+});
+
+// Conectar o botão Confirmar
+botaoConfirmarFinalizacao.addEventListener("click", () => {
+    pausarCronometro();
+
+    window.location.href = "treinos.html"; //Voltar para as fichas
+})
+
 
 
 

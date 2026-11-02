@@ -158,8 +158,104 @@
    font-size: 12px;
 }
 
+/* Button finalizar treino  */
 
+/* Fundo do modal */
+.modal-finalizar[hidden] {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
 
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    background: rgb(0 0 0 / 70%);
+}
+
+/* Painel interno do modal */
+.conteudo-modal {
+    width: 100%;
+    max-width: 380px;
+
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--treino-borda-hover);
+
+    background: var(--treino-fundo-input);
+    color: var(--cor-texto);
+
+    text-align: center;
+}
+
+/* Ícone do modal */
+.icone-modal {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+    background: var(--treino-fundo-input);
+    color: var(--cor-destaque);
+
+    font-size: 20px;
+}
+
+/* Título */
+.conteudo-modal h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Descrição */
+.conteudo-modal p {
+    margin-bottom: 25px;
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Área dos botões */
+.acoes-modal {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo compartilhado */
+.acoes-modal button {
+    flex: 1;
+    padding: 12px 10px;
+
+    border: 1px solid var(--treino-borda-hover);
+    border-radius: 6px;
+
+    color: var(--cor-texto);
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+/* Botão cancelar */
+#btnCancelarFinalizacao {
+    background: var(--treino-fundo-input);
+}
+
+/* Botão finalizar */
+#btnConfirmarFinalizacao {
+    background: var(--cor-primaria);
+}
+
+/* Efeito ao passar o mouse */
+.acoes-modal button:hover {
+    filter: brightness(1.15);
+}
 
 
 

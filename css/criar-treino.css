@@ -985,22 +985,15 @@
 /* =========================
    LISTA DA BIBLIOTECA
    ========================= */
-
+/* Rolagem da biblioteca de exercícios */
 .lista-exercicio {
-    flex: 1;
-
-    min-height: 0;
-
+    max-height: 360px;
     overflow-y: auto;
-
     padding-right: 8px;
-
-    scrollbar-width: thin;
-
-    scrollbar-color:
-        var(--cor-destaque)
-        transparent;
+    overscroll-behavior: contain;
 }
+
+
 
 
 .lista-exercicio::-webkit-scrollbar {

@@ -1,0 +1,146 @@
+[
+
+
+  {
+    "id": 1,
+    "nome": "Supino Reto com Barra",
+    "descricao": "Trabalha principalmente o peitoral.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 2,
+    "nome": "Supino Inclinado com Barra",
+    "descricao": "Enfatiza a porção superior do peitoral.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 3,
+    "nome": "Supino Declinado com Barra",
+    "descricao": "Trabalha o peitoral em ângulo declinado.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 4,
+    "nome": "Supino Reto com Halteres",
+    "descricao": "Trabalha o peitoral com halteres.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 5,
+    "nome": "Supino Inclinado com Halteres",
+    "descricao": "Enfatiza a parte superior do peitoral.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 6,
+    "nome": "Crucifixo com Halteres",
+    "descricao": "Trabalha o peitoral com movimento de abertura.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 7,
+    "nome": "Crossover na Polia",
+    "descricao": "Trabalha o peitoral com resistência das polias.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 8,
+    "nome": "Flexão de Braço",
+    "descricao": "Trabalha o peitoral usando o peso corporal.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 9,
+    "nome": "Peck Deck",
+    "descricao": "Trabalha o peitoral na máquina.",
+    "grupo": "Peito",
+    "imagem": null
+  },
+  {
+    "id": 10,
+    "nome": "Pullover com Halter",
+    "descricao": "Trabalha o peitoral e envolve os dorsais.",
+    "grupo": "Peito",
+    "imagem": null
+  }
+  ,
+{
+  "id": 11,
+  "nome": "Puxada Frontal",
+  "descricao": "Trabalha principalmente os músculos dorsais.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 12,
+  "nome": "Puxada Aberta",
+  "descricao": "Enfatiza os músculos da região dorsal.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 13,
+  "nome": "Remada Curvada com Barra",
+  "descricao": "Fortalece as costas e os dorsais.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 14,
+  "nome": "Remada Baixa",
+  "descricao": "Trabalha os músculos do meio das costas.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 15,
+  "nome": "Remada Unilateral com Halter",
+  "descricao": "Trabalha os dorsais de cada lado.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 16,
+  "nome": "Barra Fixa",
+  "descricao": "Trabalha os dorsais usando o peso corporal.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 17,
+  "nome": "Remada Cavalinho",
+  "descricao": "Fortalece os dorsais e a região central das costas.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 18,
+  "nome": "Remada na Máquina",
+  "descricao": "Trabalha os músculos das costas com apoio.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 19,
+  "nome": "Pulldown com Braços Estendidos",
+  "descricao": "Enfatiza os músculos dorsais.",
+  "grupo": "Costas",
+  "imagem": null
+},
+{
+  "id": 20,
+  "nome": "Remada com Barra T",
+  "descricao": "Trabalha os dorsais e a região média das costas.",
+  "grupo": "Costas",
+  "imagem": null
+}
+
+]

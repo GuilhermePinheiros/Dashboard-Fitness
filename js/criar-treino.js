@@ -46,7 +46,7 @@ const mensagemExercicios = document.querySelector("#mensagem-exercicios");
  Criação do banco exercícios 
  ========================*/
 
- const exercicios = [
+/*  const exercicios = [
     {
         id: 1,
         nome: "Supino Reto",
@@ -61,83 +61,11 @@ const mensagemExercicios = document.querySelector("#mensagem-exercicios");
        
     },
 
-    {
-        id: 2,
-        nome: "Remada Curvada",
+ 
 
-        descricao: "Fortalece costas e lombar.",
+ ]; */
 
-        grupo: "Costas",
-
-        imagem: "../imagens/remada-curvada.png"
-
-        
-    },
-
-    {
-    id: 3,
-    nome: "Remada Curvada",
-
-    descricao: "Fortalece costas e lombar.",
-
-    grupo: "Costas",
-
-    imagem: "../imagens/remada-curvada.png"
-
-        
-    },
-
-    {
-    id: 4,
-    nome: "Remada Curvada",
-
-    descricao: "Fortalece costas e lombar.",
-
-    grupo: "Costas",
-
-    imagem: "../imagens/remada-curvada.png"
-
-        
-    },
-
-    {
-    id: 5,
-    nome: "Remada Curvada",
-
-    descricao: "Fortalece costas e lombar.",
-
-    grupo: "Costas",
-
-    imagem: "../imagens/remada-curvada.png"
-
-        
-    },
-    {
-    id: 6,
-    nome: "Remada Curvada",
-
-    descricao: "Fortalece costas e lombar.",
-
-    grupo: "Costas",
-
-    imagem: "../imagens/remada-curvada.png"
-
-        
-    },
-    {
-    id: 7,
-    nome: "Remada Curvada",
-
-    descricao: "Fortalece costas e lombar.",
-
-    grupo: "Costas",
-
-    imagem: "../imagens/remada-curvada.png"
-
-        
-    }
-
- ];
+ let exercicios = []; //cria uma variável compartilhada, que poderá receber novos dados.
 
  //3- Array dos exerícios escolhidos 
 /* ============================
@@ -205,8 +133,9 @@ lista.addEventListener("click", function(event) {
 
              <article class="card-exercicio" data-grupo="${exercicio.grupo.toLowerCase()}">
 
-                    <img src="${exercicio.imagem}"
-                    alt= "${exercicio.nome}">
+                    ${exercicio.imagem
+                        ? `<img src="${exercicio.imagem}" alt="${exercicio.nome}">`
+                        : ""}
 
                     <div class="conteudo-exercicio">
 
@@ -252,7 +181,17 @@ lista.addEventListener("click", function(event) {
 }
 
 
- mostrarExercicios(exercicios);
+carregarExercicios();
+
+ //função de carregamento, dados carregados do arquivo JSON.
+
+async function carregarExercicios() {
+    const resposta = await fetch("../js/exercicios.json");
+
+    exercicios = await resposta.json(); //: coloca os exercícios do JSON, dentro de exercicios
+ 
+    mostrarExercicios(exercicios);
+}
 
 /* ======================
 Função que vai trasformar em HTML e colocar na tela do (Exercicios selecionados) */
@@ -324,7 +263,8 @@ function mostrarExerciciosSelecionados() {
 
 
 
-// input de busca dos exercícios
+// Filtro input de busca dos exercícios
+
 function buscarExercicios(texto) {
     const resultado = exercicios.filter(function(exercicio) {
 
