@@ -141,6 +141,572 @@
   "descricao": "Trabalha os dorsais e a região média das costas.",
   "grupo": "Costas",
   "imagem": null
+},
+{
+  "id": 21,
+  "nome": "Desenvolvimento com Halteres",
+  "descricao": "Trabalha as três porções dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 22,
+  "nome": "Desenvolvimento com Barra",
+  "descricao": "Fortalece principalmente os deltoides.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 23,
+  "nome": "Elevação Lateral com Halteres",
+  "descricao": "Enfatiza a porção lateral dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 24,
+  "nome": "Elevação Frontal com Halteres",
+  "descricao": "Trabalha a porção anterior dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 25,
+  "nome": "Elevação Lateral na Polia",
+  "descricao": "Trabalha a porção lateral com resistência constante.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 26,
+  "nome": "Crucifixo Inverso",
+  "descricao": "Enfatiza a porção posterior dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 27,
+  "nome": "Face Pull",
+  "descricao": "Trabalha deltoides posteriores e músculos superiores das costas.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 28,
+  "nome": "Desenvolvimento Arnold",
+  "descricao": "Trabalha os deltoides com rotação dos braços.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 29,
+  "nome": "Elevação Frontal com Barra",
+  "descricao": "Enfatiza a parte anterior dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 30,
+  "nome": "Crucifixo Inverso na Máquina",
+  "descricao": "Fortalece a parte posterior dos ombros.",
+  "grupo": "Ombros",
+  "imagem": null
+},
+{
+  "id": 31,
+  "nome": "Rosca Direta com Barra",
+  "descricao": "Trabalha principalmente os bíceps.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 32,
+  "nome": "Rosca Alternada com Halteres",
+  "descricao": "Trabalha os bíceps alternadamente.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 33,
+  "nome": "Rosca Martelo",
+  "descricao": "Trabalha bíceps e músculos do antebraço.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 34,
+  "nome": "Rosca Scott",
+  "descricao": "Isola os bíceps com apoio dos braços.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 35,
+  "nome": "Rosca Concentrada",
+  "descricao": "Enfatiza o trabalho individual dos bíceps.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 36,
+  "nome": "Rosca na Polia Baixa",
+  "descricao": "Trabalha os bíceps com tensão constante.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 37,
+  "nome": "Rosca Inclinada com Halteres",
+  "descricao": "Trabalha os bíceps com os braços inclinados.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 38,
+  "nome": "Rosca 21",
+  "descricao": "Combina três amplitudes de movimento.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 39,
+  "nome": "Rosca Martelo na Corda",
+  "descricao": "Trabalha bíceps e braquiorradial.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+{
+  "id": 40,
+  "nome": "Rosca Scott na Máquina",
+  "descricao": "Trabalha os bíceps com apoio na máquina.",
+  "grupo": "Bíceps",
+  "imagem": null
+},
+
+{
+  "id": 41,
+  "nome": "Tríceps Pulley com Barra",
+  "descricao": "Trabalha as três porções do tríceps.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 42,
+  "nome": "Tríceps Pulley com Corda",
+  "descricao": "Trabalha o tríceps com pegada neutra.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 43,
+  "nome": "Tríceps Testa com Barra",
+  "descricao": "Enfatiza o trabalho do tríceps.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 44,
+  "nome": "Tríceps Francês com Halter",
+  "descricao": "Enfatiza a cabeça longa do tríceps.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 45,
+  "nome": "Tríceps Coice com Halter",
+  "descricao": "Trabalha o tríceps com extensão do cotovelo.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 46,
+  "nome": "Mergulho nas Paralelas",
+  "descricao": "Trabalha o tríceps com o peso corporal.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 47,
+  "nome": "Tríceps Banco",
+  "descricao": "Trabalha o tríceps usando o peso corporal.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 48,
+  "nome": "Supino Fechado",
+  "descricao": "Enfatiza o tríceps durante o empurrão.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 49,
+  "nome": "Tríceps Francês na Polia",
+  "descricao": "Trabalha a cabeça longa do tríceps.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 50,
+  "nome": "Tríceps Unilateral na Polia",
+  "descricao": "Trabalha cada braço individualmente.",
+  "grupo": "Tríceps",
+  "imagem": null
+},
+{
+  "id": 51,
+  "nome": "Agachamento Livre",
+  "descricao": "Trabalha quadríceps e glúteos.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 52,
+  "nome": "Agachamento no Smith",
+  "descricao": "Trabalha quadríceps com barra guiada.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 53,
+  "nome": "Leg Press 45 Graus",
+  "descricao": "Trabalha quadríceps e glúteos.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 54,
+  "nome": "Cadeira Extensora",
+  "descricao": "Enfatiza os músculos do quadríceps.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 55,
+  "nome": "Agachamento Búlgaro",
+  "descricao": "Trabalha quadríceps e glúteos unilateralmente.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 56,
+  "nome": "Avanço com Halteres",
+  "descricao": "Trabalha quadríceps e glúteos.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 57,
+  "nome": "Passada no Smith",
+  "descricao": "Trabalha quadríceps com barra guiada.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 58,
+  "nome": "Agachamento Goblet",
+  "descricao": "Trabalha quadríceps com halter.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 59,
+  "nome": "Step-up com Halteres",
+  "descricao": "Trabalha quadríceps e glúteos em elevação.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 60,
+  "nome": "Hack Squat",
+  "descricao": "Enfatiza o trabalho dos quadríceps.",
+  "grupo": "Quadríceps",
+  "imagem": null
+},
+{
+  "id": 61,
+  "nome": "Mesa Flexora",
+  "descricao": "Trabalha os músculos posteriores da coxa.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 62,
+  "nome": "Cadeira Flexora",
+  "descricao": "Fortalece os músculos posteriores da coxa.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 63,
+  "nome": "Stiff com Barra",
+  "descricao": "Trabalha posteriores de coxa e glúteos.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 64,
+  "nome": "Stiff com Halteres",
+  "descricao": "Fortalece posteriores de coxa e glúteos.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 65,
+  "nome": "Levantamento Terra Romeno",
+  "descricao": "Trabalha posteriores de coxa e glúteos.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 66,
+  "nome": "Flexora Unilateral",
+  "descricao": "Trabalha cada posterior de coxa individualmente.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 67,
+  "nome": "Nordic Curl",
+  "descricao": "Fortalece os posteriores com peso corporal.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 68,
+  "nome": "Good Morning",
+  "descricao": "Trabalha posteriores de coxa e lombar.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 69,
+  "nome": "Pull Through na Polia",
+  "descricao": "Trabalha posteriores de coxa e glúteos.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+{
+  "id": 70,
+  "nome": "Flexão de Pernas com Bola Suíça",
+  "descricao": "Trabalha posteriores usando bola de exercício.",
+  "grupo": "Posterior de coxa",
+  "imagem": null
+},
+
+{
+  "id": 71,
+  "nome": "Elevação Pélvica com Barra",
+  "descricao": "Enfatiza os músculos dos glúteos.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 72,
+  "nome": "Elevação Pélvica na Máquina",
+  "descricao": "Trabalha os glúteos com resistência guiada.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 73,
+  "nome": "Coice na Polia",
+  "descricao": "Trabalha os glúteos individualmente.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 74,
+  "nome": "Abdução de Quadril na Máquina",
+  "descricao": "Enfatiza a região lateral dos glúteos.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 75,
+  "nome": "Abdução de Quadril na Polia",
+  "descricao": "Trabalha os glúteos com resistência da polia.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 76,
+  "nome": "Agachamento Sumô",
+  "descricao": "Trabalha glúteos e músculos das pernas.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 77,
+  "nome": "Afundo com Passada Longa",
+  "descricao": "Enfatiza os glúteos durante o movimento.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 78,
+  "nome": "Extensão de Quadril no Banco",
+  "descricao": "Trabalha os glúteos com extensão do quadril.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 79,
+  "nome": "Ponte de Glúteos",
+  "descricao": "Fortalece os glúteos com peso corporal.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+{
+  "id": 80,
+  "nome": "Extensão de Quadril no Cabo",
+  "descricao": "Trabalha os glúteos com resistência constante.",
+  "grupo": "Glúteos",
+  "imagem": null
+},
+
+
+{
+    "id": 81,
+    "nome": "Elevação de Panturrilha em Pé",
+    "descricao": "Fortalece os músculos da panturrilha em pé.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 82,
+    "nome": "Elevação de Panturrilha Sentado",
+    "descricao": "Enfatiza o sóleo com os joelhos flexionados.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 83,
+    "nome": "Elevação de Panturrilha no Leg Press",
+    "descricao": "Trabalha a panturrilha no leg press.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 84,
+    "nome": "Elevação de Panturrilha Unilateral",
+    "descricao": "Trabalha cada panturrilha individualmente.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 85,
+    "nome": "Elevação de Panturrilha no Smith",
+    "descricao": "Permite executar a elevação com barra guiada.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 86,
+    "nome": "Elevação de Panturrilha no Hack",
+    "descricao": "Trabalha a panturrilha na máquina hack.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 87,
+    "nome": "Elevação de Panturrilha no Degrau",
+    "descricao": "Amplia a amplitude usando um degrau.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 88,
+    "nome": "Panturrilha no Leg Press Horizontal",
+    "descricao": "Trabalha a panturrilha na plataforma horizontal.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 89,
+    "nome": "Elevação de Panturrilha com Halteres",
+    "descricao": "Trabalha a panturrilha com halteres.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+{
+    "id": 90,
+    "nome": "Caminhada na Ponta dos Pés",
+    "descricao": "Fortalece a panturrilha durante a caminhada.",
+    "grupo": "Panturrilhas",
+    "imagem": null
+},
+
+
+{
+    "id": 91,
+    "nome": "Abdominal Tradicional",
+    "descricao": "Trabalha principalmente os músculos do abdômen.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 92,
+    "nome": "Abdominal Infra",
+    "descricao": "Enfatiza a região inferior do abdômen.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 93,
+    "nome": "Abdominal Bicicleta",
+    "descricao": "Trabalha o abdômen com rotação do tronco.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 94,
+    "nome": "Prancha Isométrica",
+    "descricao": "Fortalece o abdômen mantendo o corpo estável.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 95,
+    "nome": "Prancha Lateral",
+    "descricao": "Enfatiza os músculos laterais do abdômen.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 96,
+    "nome": "Elevação de Pernas Suspenso",
+    "descricao": "Trabalha o abdômen com elevação das pernas.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 97,
+    "nome": "Abdominal na Polia",
+    "descricao": "Trabalha o abdômen com resistência da polia.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 98,
+    "nome": "Abdominal na Máquina",
+    "descricao": "Fortalece o abdômen com resistência guiada.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 99,
+    "nome": "Abdominal Canivete",
+    "descricao": "Trabalha o abdômen aproximando braços e pernas.",
+    "grupo": "Abdômen",
+    "imagem": null
+},
+{
+    "id": 100,
+    "nome": "Abdominal com Roda",
+    "descricao": "Fortalece o abdômen com movimento de extensão.",
+    "grupo": "Abdômen",
+    "imagem": null
 }
 
 ]

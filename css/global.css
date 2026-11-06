@@ -71,41 +71,11 @@ body {
 
 main {
     margin: auto;
-    padding: 40px;
-}
-
-
-/* =========================
-   LOGO
-   ========================= */
-
-.logo {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
     padding: 5px;
 }
 
-.logo i {
-    font-size: 34px;
-    color: var(--cor-destaque);
-}
 
-.logo span {
-    color: var(--cor-destaque);
-}
 
-.texto-logo h2 {
-    color: var(--cor-texto);
-    font-size: 20px;
-}
-
-.texto-logo span {
-    color: var(--cor-destaque);
-    font-size: 18px;
-    font-weight: bold;
-}
 
 
 /* =========================
@@ -211,25 +181,11 @@ main {
 
 @media (max-width: 560px) {
 
-    main {
-        padding: 20px;
-    }
 
-    .menu-inferior {
-        height: 70px;
-    }
-
-    .menu-inferior a i {
-        font-size: 20px;
-    }
-
-    .menu-inferior a span {
-        font-size: 11px;
-    }
-}
 
 @media (max-width: 767px) {
     .menu-inferior  span {
         display: none;
     }
+}
 }

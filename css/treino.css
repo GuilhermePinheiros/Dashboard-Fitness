@@ -349,10 +349,11 @@ FIILTRO OBJETIVO
 
 .lista-treinos {
     display: grid;
+    min-height: 20px;
     grid-template-columns: minmax(0, 1fr);  /* O navegador calcula automaticamente quantos cards cabem */
 
     gap: 8px;
-    padding: 7px 5px;
+    padding: 8px 10px;
     box-sizing: border-box;
 
     
@@ -363,7 +364,7 @@ FIILTRO OBJETIVO
 .card-ficha {
     display: flex;
     width: 100%;
-    min-width: 0;
+    
    
     min-height: 100px;
     background: rgba(3, 15, 30, .88);
@@ -373,26 +374,14 @@ FIILTRO OBJETIVO
     overflow: hidden;
 }
 
-/* imagem */
-.imagem-ficha {
-    width: 20%;
-    min-height: 150px;
-    flex-shrink: 0;
-    overflow: hidden;
-    
-}
 
-.imagem-ficha img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
+
 
 /* Conteúdo da ficha */
 .conteudo-ficha {
 
     flex: 1;
+    
     width: auto;
     padding: 5px 10px;
     box-sizing: border-box;
@@ -498,31 +487,8 @@ FIILTRO OBJETIVO
     white-space: nowrap;
 }
 
-/* lista de exercícios da ficha. */
-.exercicios-ficha {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4px 8px;
-    color: rgba(190, 220, 255, 0.85);
 
-    font-size: 12px;
-}
 
-.exercicios-ficha > i {
-    color: var(--cor-destaque);
-    margin-right: 5px;
-    font-size: 13px;
-}
-
-/* OS pontos de divisoria */
-.exercicios-ficha span + span::before {
-    content: "·";
-    color: var(--cor-destaque);
-    margin-right: 8px;
-    font-size: 20px;
-    
-}
 
 /* Linha azul antes do botões */
 .acoes-ficha {

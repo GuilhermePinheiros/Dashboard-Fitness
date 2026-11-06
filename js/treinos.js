@@ -31,13 +31,7 @@ function criarCard(treino) {
     return `
         <article class="card-ficha">
 
-            <div class="imagem-ficha">
-                <img
-                    src="${treino.exercicios[0].imagem}"
-                    alt="${treino.exercicios[0].nome}"
-                >
 
-            </div>
 
             <div class="conteudo-ficha">
 
@@ -78,21 +72,6 @@ function criarCard(treino) {
 
                 </div>
 
-                <div class="exercicios-ficha">
-
-                    <i class="fa-solid fa-list"></i>
-
-                    ${treino.exercicios.map(function(exercicio) {  // Percorre os exercícios da ficha. O join("") apenas junta todos esses HTML em uma única sequência.
-
-                    return `
-
-                            <span>${exercicio.nome}</span>
-
-                    `;
-
-                    }).join("")} 
-
-                </div>
 
                 <div class="acoes-ficha">
 
