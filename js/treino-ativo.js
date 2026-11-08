@@ -488,6 +488,28 @@ botaoCancelarFinalizacao.addEventListener("click", () => {
 botaoConfirmarFinalizacao.addEventListener("click", () => {
     pausarCronometro();
 
+    // Recupera o histórico de treinos salvos
+    const historicoTreinos = JSON.parse(
+        localStorage.getItem("historicoTreinos")
+    ) || [];
+
+    // Cria o registro da sessão atual
+    const sessao = {
+        nome: treino.nome,
+        duracaoSegundos: segundosTreino,
+        dataConclusao: new Date().toISOString()
+    };
+
+    // Adiciona a sessão ao histórico
+    historicoTreinos.push(sessao);
+
+    // Salva o histórico atualizado no navegador
+    localStorage.setItem (
+        "historicoTreinos",
+        JSON.stringify(historicoTreinos)
+    );
+
+
     window.location.href = "treinos.html"; //Voltar para as fichas
 })
 

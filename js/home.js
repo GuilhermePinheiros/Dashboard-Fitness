@@ -8,6 +8,9 @@ const totalTreinos = document.querySelector("#total-treinos");
 // Procura no HTML o elemento que mostra o tempo total treinado.
 const tempoTreinado = document.querySelector("#tempo-treinado");
 
+// Procura no HTML o elemento que mostra o último trino 
+const ultimoTreino = document.querySelector("#ultimo-treino");
+
 
 
 
@@ -34,21 +37,41 @@ CARD FAVORITO EM BREVE
 
 
 /* =====================
-CARD TEMPO        Obs: MUDAR ATUALIZAR ESSE CARD PARA TEMPO REAL MAIS PARA FRENTE, DATA ATUAL 12/09/2026
+CARD TEMPO        
 ======================= */
-//começamos a soma com zero.
-let somaTempo = 0;
+const historicoTreinos = JSON.parse(
+    localStorage.getItem("historicoTreinos")
+) || [];
 
-//Percorrendo os treinos
-treinosSalvos.forEach(function(treino){
-    somaTempo += Number(treino.tempo);
+let somaTempo = 0; //começa em zero e acumulará a duração dessas sessões.
+
+//percorrer o histórico
+historicoTreinos.forEach(function(sessao){
+    somaTempo += Number(sessao.duracaoSegundos);
 });
 
-// Descobre quantas horas completas existem.
-const horas = Math.floor(somaTempo / 60);
+//converter os segundos acumulados em horas e minutos.
 
-// Descobre quantos minutos sobraram  depois de retirar as horas completas.
-const minutos = somaTempo % 60;
+// Calcula as horas completas.
+const horas = Math.floor(somaTempo / 3600);
 
-// Atualiza o card da Home.
+//calcula os minutos restantes.
+const minutos = Math.floor((somaTempo % 3600) / 60);
+
+//Atualizando o tempo treinado no navegador
+
 tempoTreinado.textContent = `${horas}h ${minutos}min `;
+
+//Card último treino ou (Sessão)
+const ultimaSessao = historicoTreinos[historicoTreinos.length - 1];
+
+//tratar o caso em que não existe nenhum treino concluído.
+if(ultimaSessao) {
+
+    const data = new Date(ultimaSessao.dataConclusao);
+
+    ultimoTreino.textContent = data.toLocaleDateString("pt-BR");
+
+} else {
+    ultimoTreino.textContent  = "--";
+}
