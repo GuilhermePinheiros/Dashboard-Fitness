@@ -11,6 +11,12 @@ const tempoTreinado = document.querySelector("#tempo-treinado");
 // Procura no HTML o elemento que mostra o último trino 
 const ultimoTreino = document.querySelector("#ultimo-treino");
 
+const nomeTreinoHoje = document.querySelector("#nome-treino-hoje");
+const gruposTreinoHoje = document.querySelector("#grupos-treino-hoje");
+
+const botaoContinuarTreino = document.querySelector("#btn-continuar-treino");//Button do card treino de hoje
+
+const listaAtividades = document.querySelector("#lista-atividades"); //o JavaScript consegue acessar a lista e adicionar as atividades dinamicamente
 
 
 
@@ -75,3 +81,97 @@ if(ultimaSessao) {
 } else {
     ultimoTreino.textContent  = "--";
 }
+
+/* Lógica do treino últimas atividades */
+
+const atividadesRecentes = [...historicoTreinos].sort(function(a, b) {
+    return new Date(b.dataConclusao) - new Date(a.dataConclusao);
+})
+
+listaAtividades.innerHTML = "";
+
+atividadesRecentes.forEach(function(sessao) {
+
+    //JavaScript será responsável por reconstruir a lista.
+    const itemAtividade = document.createElement("li");
+
+    const iconeAtividade = document.createElement("div");
+    iconeAtividade.classList.add("atividade-icone");
+
+    const icone = document.createElement("i");
+    icone.classList.add("fa-solid", "fa-circle-check");
+
+    iconeAtividade.appendChild(icone);
+
+    const informacoesAtividade = document.createElement("div");
+    informacoesAtividade.classList.add("atividade-info");
+
+    const tituloAtividade = document.createElement("h3");
+
+    const dataAtividade = document.createElement("p");
+
+    tituloAtividade.textContent = `Treino ${sessao.nome} concluído`; 
+
+    //preencher o parágrafo com a data e o horário em que o treino foi concluído.
+    const data = new Date(sessao.dataConclusao);
+
+    dataAtividade.textContent = data.toLocaleString("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short"
+    });
+
+    informacoesAtividade.appendChild(tituloAtividade);
+    informacoesAtividade.appendChild(dataAtividade);
+
+    itemAtividade.appendChild(iconeAtividade);
+    itemAtividade.appendChild(informacoesAtividade);
+
+    listaAtividades.appendChild(itemAtividade);
+
+});
+
+
+
+/* Lógica card treino de hoje   */
+
+if(treinosSalvos.length > 0 ) {
+
+    const indiceUltimaFicha = ultimaSessao  // descobrir a posição da última ficha executada
+    ? treinosSalvos.findIndex(function(treino) {
+        return treino.dataCriacao === ultimaSessao.idTreino;
+    })
+    : -1;
+        //calcular qual será a próxima ficha da sequência.
+    const proximoIndice = (indiceUltimaFicha + 1) % treinosSalvos.length;
+
+    //recuperar a ficha que o sistema recomendou.
+
+    const proximoTreino = treinosSalvos[proximoIndice];
+
+    nomeTreinoHoje.textContent = proximoTreino.nome; //Exibir o nome da ficha
+
+    //recuperar os grupos musculares da ficha recomendada.
+    const gruposMusculares = [
+        ...new Set (
+            proximoTreino.exercicios.map(function(exercicio) {
+                return exercicio.grupo;
+            })
+        )
+    ];
+    //transformar o array de grupos musculares em um texto para exibir no card.
+    gruposTreinoHoje.textContent = gruposMusculares.join(" + ");
+
+    //Evento click do button continuar treino
+botaoContinuarTreino.addEventListener("click", function() {
+        localStorage.setItem(
+            "treinoAtual",
+            JSON.stringify(proximoTreino)
+        );
+
+        window.location.href = "pages/treino-ativo.html";
+    });
+} else {
+    nomeTreinoHoje.textContent = "Nenhum treino cadastrado";
+    gruposTreinoHoje.textContent = "Crie sua primeira ficha para começar.";
+}
+

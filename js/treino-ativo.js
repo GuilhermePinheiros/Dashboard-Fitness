@@ -496,6 +496,7 @@ botaoConfirmarFinalizacao.addEventListener("click", () => {
     // Cria o registro da sessão atual
     const sessao = {
         nome: treino.nome,
+        idTreino: treino.dataCriacao,
         duracaoSegundos: segundosTreino,
         dataConclusao: new Date().toISOString()
     };
@@ -512,6 +513,7 @@ botaoConfirmarFinalizacao.addEventListener("click", () => {
 
     window.location.href = "treinos.html"; //Voltar para as fichas
 })
+
 
 
 
