@@ -75,7 +75,7 @@
     display: grid;
 
   
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     
 
     
@@ -184,8 +184,9 @@
 
 .usuario article {
     flex: 1;
+
     min-width: 0;
-    height: 400px;
+    height: 320px;
 
     display: flex;
     flex-direction: column;
@@ -239,6 +240,7 @@
     gap: 20px;
 
     flex: 1;
+    min-height: 0;
 }
 
 
@@ -291,8 +293,9 @@
 
     padding: 0;
     margin: 0;
+    flex: 1;
 
-    max-height: 280px;
+    min-height: 0;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
