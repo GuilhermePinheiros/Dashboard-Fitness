@@ -22,7 +22,7 @@ const listaAtividades = document.querySelector("#lista-atividades"); //o JavaScr
 
 
 /*==================
-CARD TOTAL DE TREINOS 
+CARD TOTAL DE Fichas 
 =====================*/
 
 
@@ -34,6 +34,15 @@ const quantidadeTreinos = treinosSalvos.length;
 
 // Atualiza o número mostrado no card.
 totalTreinos.textContent = quantidadeTreinos;
+
+// preparar atividades de criação onde recupera as fichas armazenadas 
+const atividadesCriadas = treinosSalvos.map(function(treino) {
+    return {
+        tipo: "criacao",
+        nome: treino.nome, 
+        data: treino.dataCriacao
+    };
+});
 
 
 /* ===================
@@ -48,6 +57,15 @@ CARD TEMPO
 const historicoTreinos = JSON.parse(
     localStorage.getItem("historicoTreinos")
 ) || [];
+
+// Preparar atividades de treinos concluídos
+const atividadesConcluidas = historicoTreinos.map(function(sessao) {
+    return {
+        tipo: "conclusao",
+        nome: sessao.nome,
+        data: sessao.dataConclusao
+    };
+});
 
 let somaTempo = 0; //começa em zero e acumulará a duração dessas sessões.
 
@@ -83,14 +101,19 @@ if(ultimaSessao) {
 }
 
 /* Lógica do treino últimas atividades */
+const todasAtividades = [
+    ...atividadesCriadas,
+    ...atividadesConcluidas
+];
 
-const atividadesRecentes = [...historicoTreinos].sort(function(a, b) {
-    return new Date(b.dataConclusao) - new Date(a.dataConclusao);
-})
+const atividadesRecentes = todasAtividades.sort(function(a, b) {
+    return new Date(b.data) - new Date(a.data);
+});
+
 
 listaAtividades.innerHTML = "";
 
-atividadesRecentes.forEach(function(sessao) {
+atividadesRecentes.forEach(function(atividade) {
 
     //JavaScript será responsável por reconstruir a lista.
     const itemAtividade = document.createElement("li");
@@ -99,7 +122,13 @@ atividadesRecentes.forEach(function(sessao) {
     iconeAtividade.classList.add("atividade-icone");
 
     const icone = document.createElement("i");
-    icone.classList.add("fa-solid", "fa-circle-check");
+    icone.classList.add("fa-solid");
+
+    if (atividade.tipo === "criacao") {
+    icone.classList.add("fa-plus");
+    } else {
+    icone.classList.add("fa-circle-check");
+    }
 
     iconeAtividade.appendChild(icone);
 
@@ -110,10 +139,14 @@ atividadesRecentes.forEach(function(sessao) {
 
     const dataAtividade = document.createElement("p");
 
-    tituloAtividade.textContent = `Treino ${sessao.nome} concluído`; 
+    if (atividade.tipo === "criacao") {
+    tituloAtividade.textContent = `Ficha ${atividade.nome} criada`;
+    } else {
+        tituloAtividade.textContent = `Treino ${atividade.nome} concluído`;
+    }
 
     //preencher o parágrafo com a data e o horário em que o treino foi concluído.
-    const data = new Date(sessao.dataConclusao);
+    const data = new Date(atividade.data);
 
     dataAtividade.textContent = data.toLocaleString("pt-BR", {
         dateStyle: "short",
